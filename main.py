@@ -32,7 +32,7 @@ def load_comedor():
             f"{CONFIG['Comedor']['Url']}/{CONFIG['Comedor']['Id']}/{menu}.csv", sep=","
         )
         Comedor_Menu[menu] = df
-        Comedor_Menu_Hoy[menu] = get_menu_today(menu)
+        Comedor_Menu_Hoy[menu] = get_menu_today(df)
 
 
 if CONFIG["Clase"]["Encargos"]["Encendido"]:
