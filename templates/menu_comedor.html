@@ -5,7 +5,11 @@
         <a href="/">Volver a inicio</a>
         {% for menu in menus %}
                 <h3>{{menu}}</h3>
-                {{hoy[menu]}}
+                <b>Primer Plato: </b>{{hoy[menu]["Plato1"]}}
+                <b>Segundo Plato: </b>{{hoy[menu]["Plato2"]}}
+                <b>Postre: </b>{{hoy[menu]["Postre"]}}
+                {{hoy[menu]["Pan"]}}
+                
         {% endfor %}
         
 </div>
