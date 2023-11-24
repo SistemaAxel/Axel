@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from flask_gtts import gtts
+#from flask_gtts import gtts
 from yaml import load, SafeLoader
 from pysondb import getDb
 from datetime import datetime
@@ -39,7 +39,7 @@ if CONFIG["Clase"]["Encargos"]["Encendido"]:
     Clase_Encargos = getDb(CONFIG["Clase"]["Encargos"]["Archivo"])
 
 app = Flask(__name__)
-gtts(app, route=True, route_path="/gtts")
+#gtts(app, route=True, route_path="/gtts")
 
 
 def check_embed():
