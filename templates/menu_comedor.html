@@ -1,9 +1,10 @@
 {% extends 'v2.html' %} {% block contenido %}
 <div id="contenido">
   <div class="content">
-        <h1>Menu Automatico de {{comedor}} - [ Axel ]</h1>
+        <h2>Menu Automatico de {{comedor}}</h2>
         <a href="/">Volver a inicio</a>
         {% for menu in menus %}
+                <h3>{{menu}}</h3>
                 {{hoy[menu]}}
         {% endfor %}
         
