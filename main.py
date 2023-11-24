@@ -70,7 +70,7 @@ def menu_comedor():
         comedor = CONFIG["Comedor"]["Nombre"]
         return render_template(
             "menu_comedor.html",
-            basal=Comedor_Menu,
+            hoy=Comedor_Menu_Hoy,
             menus=CONFIG["Comedor"]["Menus"],
             comedor=comedor,
             embed=check_embed(),
