@@ -1,0 +1,14 @@
+{% extends 'v2.html' %} {% block contenido %}
+<div id="contenido">
+  <div class="content">
+        <h1>Menu Automatico de {{comedor}} - [ Axel ]</h1>
+        <a href="/">Volver a inicio</a>
+        {% for menu in menus %}
+                {{}}
+        {% endfor %}
+        
+</div>
+</div>
+    
+    
+{% endblock %}

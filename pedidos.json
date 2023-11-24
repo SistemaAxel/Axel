@@ -1,0 +1,17 @@
+{
+   "data": [
+      {
+         "fecha": "2023-11-23",
+         "cliente": "El Pepe",
+         "prod1": "Tortilla de Patata",
+         "prod2": "Tortilla de Patata",
+         "prod3": "Tortilla de Patata",
+         "prod4": "Bizcocho",
+         "email": "ejemplo@example.com",
+         "hecho": "No",
+         "total": 8.0,
+         "pagado": 0.0,
+         "id": 170336928672805042
+      }
+   ]
+}

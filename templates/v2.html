@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axel</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div id="pagina">
+      <div id="cabecera">
+        <h1><img src="/static/logo.png" alt="Sistema AxelClase" /></h1>
+
+        <ul id="menu-idioma">
+          <i>Creado por Naiel V, EuskadiTech &reg; 2023</i>
+        </ul>
+      </div>
+
+      <div id="contenedor">
+        <div id="menu_bar">
+          <dl>
+            <dt class="menu_bar-info">INFORMACIÓN</dt>
+            <dd><a href="/">Inicio</a></dd>
+            <dt class="menu_bar-info">ENCARGOS</dt>
+            <dd><a href="/encargos/nuevo">Nuevo Encargo</a></dd>
+            <dd><a href="/encargos/ver">Ver Encargos</a></dd>
+            <dd><a href="/encargos/hoy">Encargo(s) de hoy</a></dd>
+          </dl>
+        </div>
+
+        {% block contenido %}{% endblock %}
+
+        <div class="clear"></div>
+      </div>
+
+      <div id="pie">
+        <ul id="pie-menu">
+          <li class="inicio">
+            <a href="Estaticos.do?req=introduccion">Inicio</a>
+          </li>
+          <li><a href="Estaticos.do?req=contacto">Contacto</a></li>
+          <li><a href="Estaticos.do?req=mapaweb">Mapa Web</a></li>
+
+          <li>
+            <a href="Estaticos.do?req=preguntasFrecuentes"
+              >Preguntas frecuentes</a
+            >
+          </li>
+
+          <li>
+            <a href="Estaticos.do?req=accesibilidad">Accesibilidad web</a>
+          </li>
+
+          <li><a href="Estaticos.do?req=avisolegal">Aviso Legal</a></li>
+          <li>
+            <a href="Estaticos.do?req=politicaprivacidad"
+              >Política de privacidad</a
+            >
+          </li>
+          <li>
+            <a href="Estaticos.do?req=politicacookies">Política de cookies</a>
+          </li>
+        </ul>
+
+        <ul id="pie-logos">
+          <li>
+            <a
+              href="https://tech.eus"
+              rel="external"
+              target="_blank"
+              title="(se abre en nueva ventana)"
+              ><img
+                src="/static/EuskadiTech.png"
+                alt="EuskadiTech"
+                width="150px"
+            /></a>
+          </li>
+        </ul>
+
+        <!--<p>Última actualización: IT Txartela 2.0 16/10/2013</p>-->
+      </div>
+
+      <div class="clear"></div>
+    </div>
+  </body>
+</html>

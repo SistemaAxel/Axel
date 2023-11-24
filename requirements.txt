@@ -1,0 +1,4 @@
+Flask-gTTS==0.18
+Flask
+pysondb
+pandas

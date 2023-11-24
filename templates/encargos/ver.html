@@ -1,0 +1,43 @@
+{% extends 'v2.html' %} {% block contenido %}
+<div id="contenido">
+  <div class="content">
+    <h2>Ver Encargos</h2>
+    {% if can_encargos %}
+
+    <table id="tabla-listado">
+      <tbody>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Clientx</th>
+          <th scope="col">Email</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Pedido</th>
+          <th scope="col">Subtotal €</th>
+          <th scope="col">Pagado €</th>
+          <th scope="col">Acciones</th>
+        </tr>
+        {% for e in encargos %}
+        <tr>
+          <td>{{e["fecha"]}}</td>
+          <td>{{e["cliente"]}}</td>
+          <td>{{e["email"]}}</td>
+          <td>{{e["hecho"]}}</td>
+          <td>
+            {{e["prod1"]}}<br />{{e["prod2"]}}<br />{{e["prod3"]}}<br />{{e["prod4"]}}
+          </td>
+          <td>{{e["total"]}}</td>
+          <td>{{e["pagado"]}}</td>
+          <td>
+            <a href='/encargos/editar/{{e["id"]}}'>Editar</a><br /><br /><a
+              href='/api/encargos/borrar/{{e["id"]}}'
+              >Borrar</a
+            >
+          </td>
+        </tr>
+        {{ encargo|e }} {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

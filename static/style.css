@@ -1,0 +1,698 @@
+/* ELEMENTOS COMUNES PARA LA PORTADA, LA WEB Y LA INTRANET */
+
+body{font-family: "Trebuchet MS", Arial, Verdana, sans-serif; font-size:62.5%; background:#E0E9F0; color:#464546;}
+
+body,html,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,address,fieldset,legend,input,button,table,th,td{ margin:0; padding:0;border:0;}
+
+input{border:1px solid #545454;}
+button{border:1px solid #545454; margin-left:3px; font-size:80%;}
+
+ul,ol { list-style:none;}
+
+a{outline:none;}
+a:link {text-decoration:none; color:#304F5B;}
+a:visited {text-decoration:none; color:#304F5B; font-weight:normal;}
+a:hover,a:focus{text-decoration:underline; color:#385D69;}
+a img,:link img,:visited img { border:none;}
+
+abbr,acronym{border-bottom:1px dotted #666; cursor:help;}
+
+kbd { line-height:2em; font-size:.8em; font-weight:normal; font-family:"Lucida console", Courier, monospace, sans-serif; border-top:.15em solid #ccc; border-right:.25em solid #aaa; border-bottom:.3em solid #888; border-left:.2em solid #bbb; padding:.05em .2em; color:#000; background:#eee; vertical-align:text-bottom;}
+
+
+.clear{clear:both; height:0;}
+.center{text-align:center;}
+
+.flotad{float:right; margin:0 0 10px 10px; padding:2px; border:0px dotted #d70005;}
+.flotai{float:left; margin:0 10px 10px 0px; padding:2px; border:0px dotted #d70005;}
+
+
+h1{font-size:2em;}
+h2{font-size:1.7em; color:#003F7C; margin-bottom:1em; font-family:"Trebuchet MS", Verdana, sans-serif; background:transparent url(h1.jpg) no-repeat left bottom;}
+h3{font-size:1.5em; color:#D95900; margin:0.5em 0 0.5em 0;}
+h4{font-size:1.2em; color:#565556;}
+h5{font-size:1.1em; }
+
+p,ul,ol,dl,legend,caption,th,td{font-size:1.2em;}
+p{line-height:1.3em; margin-bottom:0.8em;}
+
+
+table{ width:55em; margin:1em auto 3em auto; border:1px solid #000;}
+table th{ font-size:1em;}
+table td{border-bottom:1px dotted #666; font-size:1em;}
+table td input{margin-right:0.2em; /*height:1%;*/}
+
+
+
+/* BLOQUES DE MAQUETACI N COMUNES PARA LA PORTADA, LA WEB Y LA INTRANET */
+
+#pagina{width:79em; margin:15px auto 0px auto; color:#333; padding:1px; border:1px solid #003F7C;}
+#cabecera{width:79em; position:relative; float:left;  background:#FFF url(/static/cabecera.jpg) no-repeat bottom right; min-height:90px;}
+#contenedor{width:79em; position:relative; float:left; margin:00; padding:0; background:#FFF;} 
+#pie{clear:both; width:79em; position:relative; float:left; background:#003F7C; padding:5px 0px 0px 0px; border-top:1px solid #003F7C; margin-bottom:0px;}
+
+
+
+/* ELEMENTOS DE LOS BLOQUES DE MAQUETACI N COMUNES PARA LA PORTADA, LA WEB Y LA INTRANET */
+
+#bloque-usuario{width:30em; position:absolute; bottom:15px; right:10px; padding:0px 4px; background:#FFF; border:3px solid #d95900;}
+
+#bloque-usuario p{font-size:1em; padding:2px 0px 2px 26px; margin:0px; }
+#datos{background:transparent url(icon_user.gif) no-repeat left;}
+#datos span{font-weight:bold;}
+#logout{background:transparent url(logout.png) no-repeat left;}
+
+#bloque-usuario-sinlogin{width:11em; position:absolute; bottom:15px; right:10px; padding:3px 4px; background:#FFF; border:3px solid #d95900;}
+#bloque-usuario-sinlogin p{font-size:1.1em; background:transparent url(/static/finalizar.gif) no-repeat left; padding:7px 0px 5px 50px; margin:0px;}
+
+
+
+
+#menu-idioma{width:20em; position:absolute; top:-19px; right:2px; text-align:right;}
+#cabecera ul.demoweb{top:-26px; right:-4px;}
+
+#menu-idioma li{display:inline; margin-left:5px; background:transparent url(idioma-li.gif) no-repeat left; padding-left:11px; font-size:0.8em;}
+
+
+/* ELEMENTOS DE LOS BLOQUES DE MAQUETACI N COMUNES PARA LA PORTADA, LA WEB Y LA INTRANET */
+#menu_bar{ width:15em; position:relative; float:left; min-height:450px; padding-bottom:5px;/* background:#7C99B9 url(menubar-bl.gif) no-repeat bottom left; */}
+
+#menu_bar dl{margin: 0px 4px 0px 4px; position:relative;}
+#menu_bar dl dt{font-weight:bold; background:#003F7C/*#1A263F*/; color:#FFF; padding:0.1em 0.1em 0.1em 0.3em; margin-top:8px; font-size:0.9em;}
+#menu_bar dl .menu_bar-info{margin-top:2px;}
+#menu_bar dl dd{font-size: 0.9em; border:1px solid #e4e6f4; background:#FFF; padding:0px 0px; margin-bottom:1px;}
+
+#li-certif{background:#FFF url(../media/li-certificaciones.gif) no-repeat left;}
+#li-centros{background:#FFF url(../media/li-centros.gif) no-repeat left;}
+#li-plazas{background:#FFF url(../media/li-plazas.jpg) no-repeat left;}
+#li-ayuda{background:#FFF url(../media/li-preguntas.gif) no-repeat left;}
+
+#menu_bar dl dd:hover{border:1px solid #bfd4da;}
+#menu_bar dl dd a {display:block;text-decoration:none; color:#1A263F/*#304F5B*/; background:url(up.gif) 8px repeat-y; padding:2px 0px 1px 15px;}
+#menu_bar dl dd a:hover, #menu_bar dl dd a#current:hover, #menu_bar dl dd a:focus, #menu_bar dl dd a#current:focus{background:#E9ECED url(down.gif) 11px repeat-y; color:#1A263F/*#304F5B*/;}
+#menu_bar dl dd a#current{color:#1A263F; background:#FFF9F9 url(active.gif) 8px repeat-y; border-top:1px solid #E38340; border-bottom:1px solid #E38340;}
+#menu_bar dl dd a#current:hover, #menu_bar dl dd a#current:focus {border-top:1px solid #E9ECED; border-bottom:1px solid #E9ECED;}
+
+
+
+
+
+#contenido{ width:64em; position:relative; float:right; min-height:460px; background:#FFF;}
+.content{padding:0em 2em 1em 2em;}
+.content p a:link, .content p a:visited {color:#314D5A; background:#F7FBFF; border-bottom:2px solid #d8eef3; padding:0px 1px;}
+.content p a:hover, .content p a:focus{color:#314D5A; background:#F7FBFF; border-bottom:2px solid #d8eef3; padding:0px 1px;}
+
+/*  ............................. PIE ...............................*/
+
+#pie-menu{text-align:center;}
+#pie-menu li{display:inline; margin-right:9px; background:transparent url(pie-li.gif) no-repeat left; padding-left:12px;}
+#pie-menu li.inicio{ background:transparent none; }
+
+#pie-menu li a{color:#FFF;}
+
+#pie-logos{text-align:center; margin:10px 0px 5px 0px;}
+#pie-logos li{display:inline; margin-right:15px;}
+#pie-logos li img{border:1px dotted #F7FBFF; padding:2px;}
+
+#pie p{text-align:center; color:#FFFFFF; font-size:90%;}
+
+
+
+/* ............................. PESTANAS .............................  */
+#tabs{float:left; width:100%; margin-bottom:2em; font-size:93%; line-height:normal; border-bottom:1px solid #BCD2E6;}
+#tabs ul{margin:0; padding:10px 10px 0 50px; list-style:none;}
+#tabs li{display:inline; margin:0; padding:0;}
+#tabs a{float:left; background:url(tableft1.gif) no-repeat left top; margin:0; padding:0 0 0 4px; text-decoration:none;}
+#tabs a span{ float:left; display:block; background:url(tabright1.gif) no-repeat right top; padding:5px 15px 4px 6px; color:#314D5A;}
+#tabs a span {float:none;}/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a:hover span{color:#314D5A;}
+#tabs a:hover{background-position:0% -42px;}
+#tabs a:hover span{background-position:100% -42px;}
+
+
+
+
+
+
+
+/* ............................. FORMULARIOS ............................. */
+form dl{display:block; clear:both;}
+form dl dt{ float:left; width:15em; clear:both; font-weight:bold; margin-bottom:0.2em;/* border-bottom:1px dotted #999;*/}
+form dl dt span{display:block; font-size:0.8em; font-weight:normal;} /* Para las explicaciones-requisitos de cada campo de formulario */
+
+form dl dd{float:right; width:28em; margin-bottom:0.2em;/* border-bottom:1px dotted #999;*/}
+
+fieldset{clear:both; display:block; width:95%; border:1px solid #D2EBF1; margin:15px 0 10px 0; padding:15px 1% 5px 1%; background:#F4F7FA;/*#F7FBFF*/}
+
+
+fieldset legend{color: #005584; font-style:italic; font-weight:bold; margin:10px 0 10px 0; padding:0px 10px; background:#FFF;}
+
+fieldset fieldset{ background:#F4F4F4/* url(fieldset2.gif) repeat-x top;*/}
+fieldset fieldset{font-size:0.8em;}
+li input, li textarea, li select{margin-right:3px;}
+
+
+/* imágenes de fondo para varios fieldset */
+
+.f-plazas{ background:#F4F7FA url(plazas.gif) no-repeat top right;}
+.f-historialpub{ background:#F4F7FA url(historialpub.jpg) no-repeat top right;}
+
+.f-user{ background:#F4F7FA url(form-usuario.jpg) no-repeat top right;}
+.f-address{ background:#F4F7FA url(form-address.jpg) no-repeat top right;}
+.f-otros{ background:#F4F7FA url(form-otros.gif) no-repeat top right;}
+.f-password{ background:#F4F7FA url(form-password.gif) no-repeat top right;}
+
+
+#bloque-login-usuario{background:transparent url(login.jpg) no-repeat top right; min-height:225px;}
+#bloque-login-usuario div{width:70%;}
+.f-login{width:95%; background:#F4F7FA;}
+.f-login dl dt{ width:20%;}
+.f-login dl dd{ width:70%;}
+
+
+
+/* ............................. DETALLES ............................. */
+#detalles{display:block; clear:both;width:47em; background:transparent url(lista-detalles.gif) no-repeat top left; padding:35px 0 20px 0; overflow:hidden; margin-bottom:20px;}
+#detalles dt{ float:left; width:15em; clear:both; font-weight:bold; color:#2C2C2C; margin:0 0 0.2em 4em;}
+#detalles dd{float:right;  width:27em; margin-bottom:0.2em; background:#FAFAFA;}
+#detalles dd input{border:1px solid #000;}
+
+ol#detalles{list-style-type:decimal;}
+ol#detalles li{ margin-left:4em;}
+ol#detalles li a{background:transparent url(detalles.gif) no-repeat right; padding-right:18px;}
+
+.detalles{display:block; clear:both;width:47em; background:transparent url(lista-detalles.gif) no-repeat top left; padding:35px 0 20px 0; overflow:hidden; margin-bottom:20px;}
+.detalles dt{ float:left; width:15em; clear:both; font-weight:bold; color:#2C2C2C; margin:0 0 0.2em 4em;}
+.detalles dd{float:right; width:27em; margin-bottom:0.2em; background:#FAFAFA;}
+
+
+ol .detalles{list-style-type:decimal;}
+ol .detalles li{ margin-left:4em;}
+ol .detalles li a{background:transparent url(detalles.gif) no-repeat right; padding-right:18px;}
+
+
+
+/* ............... TABLAS LISTADOS ...........*/
+#tabla-listado{width:61em; margin:0 auto 3em auto; border:0; border-spacing:1px;}
+#tabla-listado caption{color: #003F7C; margin-top:10px; padding:3px; font-size:1.1em; font-weight:bold;}
+#tabla-listado th{font-size:1.1em; padding:2px 2px 1px 2px; background:#D95900; color:#FFF; border:1px solid #ffffff;}
+#tabla-listado tr{background:#E8F4FB;}
+#tabla-listado tr td{padding:1px 2px; background:#F0F5F9; border-bottom:1px solid #D6EBF7;}
+#tabla-listado tr.odd{background:#ffffff;}
+#tabla-listado tr.odd td{background:#ffffff; border-bottom:1px solid #D6EBF7;}
+
+#tabla-listado tr td input{margin-right:0.2em;}
+
+
+
+#tabla-listado td{white-space:normal;/*white-space:nowrap;*/}
+#tabla-listado td form{ margin:0px; padding:0px;}
+#tabla-listado td form p{ margin:0px; padding:0px; text-align:left;}
+#tabla-listado td form input type[hidden]{display:none;}
+
+.tabla-listado{width:61em; margin:0 auto 3em auto; border:0; border-spacing:1px;}
+.tabla-listado caption{color: #003F7C; margin-top:10px; padding:3px; font-size:1.1em; font-weight:bold;}
+.tabla-listado th{font-size:1.1em; padding:2px 2px 1px 2px; background:#D95900; color:#FFF; border:1px solid #ffffff;}
+.tabla-listado tr{background:#E8F4FB;}
+.tabla-listado tr td{padding:1px 2px; background:#F0F5F9; border-bottom:1px solid #D6EBF7;}
+.tabla-listado tr.odd{background:#ffffff;}
+.tabla-listado tr.odd td{background:#ffffff; border-bottom:1px solid #D6EBF7;}
+
+.tabla-listado tr td input{margin-right:0.2em;}
+
+.tabla-listado td{white-space:normal;/*white-space:nowrap;*/}
+.tabla-listado td form{ margin:0px; padding:0px;}
+.tabla-listado td form p{ margin:0px; padding:0px; text-align:left;}
+.tabla-listado td form input type[hidden]{display:none;}
+
+
+
+/* ............................. BOTONES EN FORMULARIOS ............................. */
+.acciones{text-align:center; margin-top:1em;}
+.acciones li{display:inline; margin-right:2em;}
+.acciones input{border:0px none; text-decoration:none; text-align:left; cursor:pointer;}
+.acciones a{text-decoration:underline;}
+
+.buscar{ background:transparent url(buscar.gif) no-repeat left; padding:5px 0px 5px 45px;}
+
+.new{ background:transparent url(new.gif) no-repeat left; padding:5px 0px 5px 45px; border:0px none; text-decoration:none;}
+
+.inscribirse{ background:transparent url(inscribirse.gif) no-repeat left; padding:5px 0px 5px 45px; border:0px none; text-decoration:none;}
+
+.recordar-passw{ background:transparent url(recordar-password.gif) no-repeat left; padding:5px 0px 5px 45px; border:0px none; text-decoration:none;}
+
+.detalle{ background:transparent url(detalle.gif) no-repeat left; padding-left:18px;}
+
+.nota, .aviso{ background:transparent url(nota.gif) no-repeat top left; padding:7px 0px 7px 33px;}
+
+.volver{background:transparent url(web-volver.gif) no-repeat left; padding:5px 0px 5px 25px;}
+
+.del{ background:transparent url(anular.gif) no-repeat left; padding:5px 0px 5px 45px; border:0px none;}
+
+p.print{ background:transparent url(print.gif) no-repeat left; padding:5px 0px 5px 45px; border:0px none;}
+a.mini-print{ background:transparent url(mini-print.jpg) no-repeat left; padding:2px 0px 2px 22px; border:0px none;}
+
+.enviar{ background:transparent url(enviar.gif) no-repeat left; padding:5px 0px 5px 45px;}
+
+
+input.ok{ background:transparent url(ok.gif) no-repeat left; padding-left:45px;}
+p.ok{ background:transparent url(ok.gif) no-repeat left; padding-left:25px; min-height:25px;}
+
+input.mod{ background:transparent url(modificar.gif) no-repeat left; padding:5px 0px 5px 50px; border:0px none;}
+
+
+p.mod{ background:transparent url(mod.gif) no-repeat left;}
+
+.error{ background:transparent url(error.gif) no-repeat top left; padding:5px 0px 5px 28px;}
+
+
+
+
+.cambiar{ background:transparent url(asignar.gif) no-repeat left; padding-left:11px;}
+.asignar{ background:transparent url(asignar.gif) no-repeat left; padding-left:11px;}
+.avisar{ background:transparent url(avisar.gif) no-repeat left; padding-left:16px;}
+.ver{ background:transparent url(boton-rev.png) no-repeat top left; padding-left:18px;}
+.ver-td{background:transparent url(boton-rev.png) no-repeat top left; padding-left:18px;}
+
+.emision-cert{background:transparent url(certificado.png) no-repeat left; padding-right:18px;}
+
+.seguir{ background:transparent url(seguir.gif) no-repeat left; padding-left:10px;}
+
+
+.cancel{ background:transparent url(cancel.gif) no-repeat left; padding-left:18px;}
+
+.exito{ background:transparent url(ok.gif) no-repeat left; padding-left:18px;}
+.info{ background:transparent url(info.gif) no-repeat left; padding-left:18px;}
+.link{ background:transparent url(web.gif) no-repeat left; padding-left:18px;}
+
+.externo{color:#4F4F4F;}
+
+.imprimir{position:absolute; top:5px; right:5px;}
+
+.estado-a{color:#118F17; font-weight:bold; background:transparent url(correcta.png) no-repeat left; padding-left:15px;} /* examen aprobado */
+
+.estado-p{color:#0C6ECF; font-weight:bold; background:transparent url(estado-p.gif) no-repeat left; padding-left:18px;} /* examen pendiente */
+
+.estado-s{color:#FF360F; font-weight:bold; background:transparent url(incorrecta.png) no-repeat left; padding-left:18px;} /* examen suspendido */
+
+.volverarriba{background:transparent url(cal_anyo_arriba.png) no-repeat left; padding-left:19px;}
+
+
+#nota-prueba-cerrada-nojs{border:1px dotted #003F7C;}
+
+#nota-prueba-cerrada{display:block; width:260px; height:260px; background:transparent url(postit-note.png) no-repeat center; padding:5px; position:absolute; top:-50px; right:-75px; padding:60px 0px 0px 25px;}
+
+#nota-prueba-cerrada p{width:60%; margin: 0px auto 20px auto;}
+#nota-prueba-cerrada p a{background:transparent;}
+#nota-prueba-cerrada p.cerrar-nota{background:transparent url(close-icon.jpg) no-repeat center left;padding:0 0 0px 17px;}
+
+#confirmar-fin{width:60%; margin:10px auto;}
+#confirmar-fin li{margin-bottom:0.9em; background:transparent url(li.png) no-repeat top left; text-indent: .9em;}
+
+.metaposta {  
+background: #fff6bf center no-repeat;  
+background-position: 15px 50%; /* x-pos y-pos */  
+text-align: left;  
+padding: 5px 20px 5px 45px;  
+border-top: 2px solid #ffd324;  
+border-bottom: 2px solid #ffd324;  
+color:#000000;  
+} 
+.conoce{display:block; clear:both; margin-bottom:30px; background:transparent url(matriculate.gif) no-repeat left; padding-left:30px;}
+
+/* ........... CERTIFICACIONES ........... */
+#modulos{width:60em; position:relative; float:left;}
+
+#modulos div{margin-bottom:2.5em; }
+#modulos #so{ width:25em; position:relative; float:left;}
+#modulos #ofimaticaMS{ width:25em; margin-right:3em; position:relative; float:right;}
+#modulos #ofimaticaOO{ width:25em; position:relative; float:left;}
+#modulos #internet{ width:25em; position:relative; float:left;}
+#modulos #otros{ width:25em; position:relative; float:left;}
+#modulos #perfilesProfesionales{width:25em; position:relative; float:left;}
+
+#modulos h3{border-bottom:1px dotted #BC6465; margin-bottom:0.4em;}
+#modulos h4{margin:0.4em 0 0.3em 0;}
+
+#modulos ul{ width:18em; margin:0 auto; background:transparent url(modulos-bg.gif) no-repeat bottom right; padding:3px 5px; border:1px solid #E7EBF7;}
+#modulos ul li{background:transparent url(modulos-li.gif) no-repeat left; padding-left:14px;}
+
+
+#modulos_lista{width:15em; position:relative; float:right; border-left:1px dotted #666; padding-left:5px;}
+
+#modulos_lista h3{font-size:100%;}
+#modulos_lista h4{font-size:90%; margin-left:10px; font-weight:bold; font-style:italic;}
+#modulos_lista ul li{ margin-left:20px;}
+#modulos_lista ul li a{ font-size:80%;}
+
+#ficha{width:40em; position:relative; float:left; clear:both; background:transparent url(lista-detalles.gif) no-repeat top left; padding:25px 0 10px 20px; overflow:hidden; display:block; }
+
+
+.curso-indice{ width:90%; position:relative; margin:5px auto;} 
+.curso-indice li{margin-bottom:0.5em; background:transparent url(li-curso-indice.gif) no-repeat top left; text-indent:1.5em; font-size:90%;}
+
+.curso-indice li ul{margin:10px 10px 0px 30px;}
+.curso-indice li ul li{margin-bottom:0.5em; background:transparent url(li-curso-indice2.gif) no-repeat top left; text-indent:1.2em; font-size:85%;}
+.curso-indice li ul li ul{margin:10px 0px 0px 35px;}
+.curso-indice li ul li ul li{margin-bottom:0.5em; background:transparent url(li-curso-indice2.gif) no-repeat top left; text-indent:1.2em; font-size:80%;}
+
+.logo-cert{text-align:center; margin-top:30px;}
+.logo-cert img{border:1px dotted #B63132; padding:2px;}
+
+.form-special{display:block; clear:both;}
+.form-special dt{float:left; width:28em; clear:both; font-weight:bold; padding:0.3em 0 0.5em 0;}
+.form-special dd{float:right; width:17em;}
+.form-special li{display:inline; margin-right:3%;}
+
+
+
+
+/* ........... DETALLES CENTROS ........... */
+#detalle_centro caption{margin-top:2em;}
+#detalle_centro tr td a{background:transparent url(inscripcion.gif) no-repeat right; padding-right:2em;}
+
+#detalle_centro tr td input{ margin-right:0.5em;}
+
+#detalle_centro tr td label{position:relative; display:block;}
+#detalle_centro tr td span{position:absolute; top:0; right:0; padding-right:110px;}
+#detalle_centro tr th span{position:absolute; top:0; right:0; }
+
+#detalle_centro tr td + td{text-align:center;}
+
+
+
+/* ........... NORMATIVA ........... */
+#normas ul{width:40em; margin:2em auto;}
+#normas ul li{margin-bottom:0.9em; background:transparent url(li.png) no-repeat top left; text-indent:0.9em;}
+
+
+
+/* ............ HOMOLOGACIÓN ............. */
+
+#logos-homolog{ text-align:center; margin-bottom:20px;}
+#logos-homolog li{ display:inline;}
+
+
+/* ........... AYUDA........... */
+#ayuda ol{width:40em; margin:2em auto;}
+
+#ayuda ol li{margin-bottom:0.9em; background:transparent url(li.png) no-repeat top left; text-indent:0.9em;}
+#ayuda ol li ul{width:28em; margin:0.5em auto;}
+#ayuda ol li ul li{font-size:0.80em; background:transparent url(li2.png) no-repeat top left;}
+#ayuda ol li ul li ul{width:22em; margin:0.2em auto;}
+#ayuda ol li ul li ul li{font-size:0.85em; background:transparent url(li3.png) no-repeat top left;}
+
+
+.preg-incorrectas{width:80%; margin:15px auto;}
+.preg-incorrectas li{background:transparent url(list-preg.png) no-repeat top left; padding-left:19px; margin-bottom:0.5em;}
+
+
+/* ........... MAPA WEB........... */
+#mapaweb div{position:relative; float:left; width:40%; margin:0px 2%; min-height:200px;}
+#mapaweb ul{width:90%; margin:0.5em auto 0px auto;}
+#mapaweb ul li{margin-bottom:0.9em; background:transparent url(li.png) no-repeat top left; text-indent:0.9em;}
+#mapaweb p{margin-bottom:30px;}
+
+
+
+/* ........... BUSCADOR ........... */
+#rdo_plazas #plazas{width:6em;}
+
+
+
+/* .............. HISTORIAL PÚBLICO ........ */
+#hist-public{width:40em; margin:1em auto;}
+#hist-public li{background:url("li.png") no-repeat left; text-indent:0.9em;}
+
+
+
+/* ............. CERTIFICADOS RECONOCIDOS POR ..................... */
+	
+#reconocido-por{ width:90%; margin:1em auto;}
+#reconocido-por dt{position:relative; float:left; width:50%; clear:both; border-bottom:1px solid #D6EBF7; margin-bottom:1em;}
+#reconocido-por dt img{display:block;}
+#reconocido-por dd{position:relative; float:right; width:45%; padding-top:1.5em; margin-bottom:1em;}
+
+
+
+
+/* ........................ ACCESIBILIDAD ........................ */
+
+#access-list{display:block;}
+#access-list dt{padding:5px 0px; font-weight:bold; font-size:1em; color:#565556;}
+#access-list dd{margin:0px 0px 5px 20px;}
+
+/* specific style triggered by javascript */ 
+
+
+.tabset_content	{ display:none; }
+.tabset_label	{ display:none }
+
+
+.tabset_content_active	{ display:block }
+/** html legend { position:absolute; top: -25em !important; left: -25em !important; }*/
+* html fieldset{ position: relative; margin-top:0 !important; padding-top:0 !important;}
+@media aural{
+	.tabset_content,
+	.tabset_label	{ display:block }
+}
+
+@media print{
+	.tabset_content,
+	.tabset_label	{ display:block }
+}
+
+/* The main calendar widget.  DIV containing a table. */
+
+div.calendar { position: relative; width:210px; margin-right:30px; height:200px;}
+
+.calendar table {width:200px;}
+
+.calendar, .calendar table {
+  border: 1px solid #556;
+  font-size: 11px;
+  color: #000;
+  cursor: default;
+  background: #eef;
+  font-family: tahoma,verdana,sans-serif;
+}
+
+/* Header part -- contains navigation buttons and day names. */
+
+.calendar .button { /* "<<", "<", ">", ">>" buttons have this class */
+  text-align: center;    /* They are the navigation buttons */
+  padding: 2px;          /* Make the buttons seem like they're pressing */
+}
+
+.calendar .nav {
+  background: #778 url(../Imagenes/calendario/menuarrow.gif) no-repeat 100% 100%;
+}
+
+.calendar thead .title { /* This holds the current "month, year" */
+  font-weight: bold;      /* Pressing it will take you to the current date */
+  text-align: center;
+  background: #fff;
+  color: #000;
+  padding: 2px;
+}
+
+.calendar thead .headrow { /* Row <TR> containing navigation buttons */
+  background: #778;
+  color: #fff;
+}
+
+.calendar thead .daynames { /* Row <TR> containing the day names */
+  background: #bdf;
+}
+
+.calendar thead .name { /* Cells <TD> containing the day names */
+  border-bottom: 1px solid #556;
+  padding: 2px;
+  text-align: center;
+  color: #000;
+}
+
+.calendar thead .weekend { /* How a weekend day name shows in header */
+  color: #a66;
+}
+
+.calendar thead .hilite { /* How do the buttons in header appear when hover */
+  background-color: #aaf;
+  color: #000;
+  border: 1px solid #04f;
+  padding: 1px;
+}
+
+.calendar thead .active { /* Active (pressed) buttons in header */
+  background-color: #77c;
+  padding: 2px 0px 0px 2px;
+}
+
+/* The body part -- contains all the days in month. */
+
+.calendar tbody .day { /* Cells <TD> containing month days dates */
+  width: 2em;
+  color: #456;
+  text-align: right;
+  padding: 2px 4px 2px 2px;
+}
+.calendar tbody .day.othermonth {
+  font-size: 80%;
+  color: #bbb;
+}
+.calendar tbody .day.othermonth.oweekend {
+  color: #fbb;
+}
+
+.calendar table .wn {
+  padding: 2px 3px 2px 2px;
+  border-right: 1px solid #000;
+  background: #bdf;
+}
+
+.calendar tbody .rowhilite td {
+  background: #def;
+}
+
+.calendar tbody .rowhilite td.wn {
+  background: #eef;
+}
+
+.calendar tbody td.hilite { /* Hovered cells <TD> */
+  background: #def;
+  padding: 1px 3px 1px 1px;
+  border: 1px solid #bbb;
+}
+
+.calendar tbody td.active { /* Active (pressed) cells <TD> */
+  background: #cde;
+  padding: 2px 2px 0px 2px;
+}
+
+.calendar tbody td.selected { /* Cell showing today date */
+  font-weight: bold;
+  border: 1px solid #000;
+  padding: 1px 3px 1px 1px;
+  background: #fff;
+  color: #000;
+}
+
+.calendar tbody td.weekend { /* Cells showing weekend days */
+  color: #a66;
+}
+
+.calendar tbody td.today { /* Cell showing selected date */
+  font-weight: bold;
+  color: #00f;
+}
+
+.calendar tbody .disabled { color: #999; }
+
+.calendar tbody .emptycell { /* Empty cells (the best is to hide them) */
+  visibility: hidden;
+}
+
+.calendar tbody .emptyrow { /* Empty row (some months need less than 6 rows) */
+  display: none;
+}
+
+/* The footer part -- status bar and "Close" button */
+
+.calendar tfoot .footrow { /* The <TR> in footer (only one right now) */
+  text-align: center;
+  background: #556;
+  color: #fff;
+}
+
+.calendar tfoot .ttip { /* Tooltip (status bar) cell <TD> */
+  background: #fff;
+  color: #445;
+  border-top: 1px solid #556;
+  padding: 1px;
+}
+
+.calendar tfoot .hilite { /* Hover style for buttons in footer */
+  background: #aaf;
+  border: 1px solid #04f;
+  color: #000;
+  padding: 1px;
+}
+
+.calendar tfoot .active { /* Active (pressed) style for buttons in footer */
+  background: #77c;
+  padding: 2px 0px 0px 2px;
+}
+
+/* Combo boxes (menus that display months/years for direct selection) */
+
+.calendar .combo {
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  width: 4em;
+  cursor: default;
+  border: 1px solid #655;
+  background: #def;
+  color: #000;
+  font-size: 90%;
+  z-index: 100;
+}
+
+.calendar .combo .label,
+.calendar .combo .label-IEfix {
+  text-align: center;
+  padding: 1px;
+}
+
+.calendar .combo .label-IEfix {
+  width: 4em;
+}
+
+.calendar .combo .hilite {
+  background: #acf;
+}
+
+.calendar .combo .active {
+  border-top: 1px solid #46a;
+  border-bottom: 1px solid #46a;
+  background: #eef;
+  font-weight: bold;
+}
+
+.calendar td.time {
+  border-top: 1px solid #000;
+  padding: 1px 0px;
+  text-align: center;
+  background-color: #f4f0e8;
+}
+
+.calendar td.time .hour,
+.calendar td.time .minute,
+.calendar td.time .ampm {
+  padding: 0px 3px 0px 4px;
+  border: 1px solid #889;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.calendar td.time .ampm {
+  text-align: center;
+}
+
+.calendar td.time .colon {
+  padding: 0px 2px 0px 3px;
+  font-weight: bold;
+}
+
+.calendar td.time span.hilite {
+  border-color: #000;
+  background-color: #667;
+  color: #fff;
+}
+
+.calendar td.time span.active {
+  border-color: #f00;
+  background-color: #000;
+  color: #0f0;
+}
