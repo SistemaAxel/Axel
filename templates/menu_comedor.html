@@ -4,7 +4,7 @@
         <h1>Menu Automatico de {{comedor}} - [ Axel ]</h1>
         <a href="/">Volver a inicio</a>
         {% for menu in menus %}
-                {{}}
+                {{hoy[menu]|s}}
         {% endfor %}
         
 </div>
