@@ -52,7 +52,7 @@ def check_embed():
 @app.route("/")
 def index():
     can_encargos = CONFIG["Clase"]["Encargos"]["Encendido"]
-    encargoss = Clase_Encargos.getAll() # Clase_Encargos.getByQuery({"fecha": get_date()})
+    encargoss = Clase_Encargos.getByQuery({"fecha": get_date()})
     return render_template(
         "index.html",
         escuela_clase=CONFIG["Clase"]["Nombre"],
