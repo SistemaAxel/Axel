@@ -26,7 +26,7 @@ def get_menu_today(menu):
       #  "Pan": fecha["Pan"].iloc[:1][0],
       #}
       e = None
-      print(fecha["Fecha"].iloc[:1])
+      print(fecha["Fecha"].iloc[:1][1])
     else:
       e = None
     return e
@@ -59,10 +59,10 @@ def check_embed():
 def alldata():
   load_comedor()
   data = {
+    "Encargos": {
+      "Encendido": CONFIG["Clase"]["Encargos"]["Encendido"],
+    },
     "Clase": {
-      "Encargos": {
-        "Encendido": CONFIG["Clase"]["Encargos"]["Encendido"],
-      },
       "Nombre": CONFIG["Clase"]["Nombre"],
     },
     "Escuela": {
@@ -82,7 +82,7 @@ def alldata():
       "Hoy": Comedor_Menu_Hoy,
     }
   if CONFIG["Clase"]["Encargos"]["Encendido"]:
-    data["Clase"]["Encargos"] = {
+    data["Encargos"] = {
       "Encendido": CONFIG["Clase"]["Encargos"]["Encendido"],
       "Hoy": Clase_Encargos.getByQuery({"fecha": get_date()}),
       "Datos": Clase_Encargos.getAll()
