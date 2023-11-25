@@ -1,8 +1,8 @@
-{% extends 'v2.html' %} {% block contenido %}
+{% extends data["Template"] %}  {% block contenido %}
 <div id="contenido">
   <div class="content">
     <h2>Ver Encargos</h2>
-    {% if can_encargos %}
+    {% if data["Encargos"]["Encendido"] %}
 
     <table id="tabla-listado">
       <tbody>
@@ -16,7 +16,7 @@
           <th scope="col">Pagado €</th>
           <th scope="col">Acciones</th>
         </tr>
-        {% for e in encargos %}
+        {% for e in data["Encargos"]["Datos"] %}
         <tr>
           <td>{{e["fecha"]}}</td>
           <td>{{e["cliente"]}}</td>
@@ -34,7 +34,7 @@
             >
           </td>
         </tr>
-        {{ encargo|e }} {% endfor %}
+        {% endfor %}
       </tbody>
     </table>
     {% endif %}

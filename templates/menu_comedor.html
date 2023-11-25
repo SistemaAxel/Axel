@@ -1,15 +1,15 @@
-{% extends 'v2.html' %} {% block contenido %}
+{% extends data["Template"] %} {% block contenido %}
 <div id="contenido">
   <div class="content">
-        <h2>Menu Automatico de {{comedor}}</h2>
+        <h2>Menu Automatico de {{data["Comedor"]["Nombre"]}}</h2>
         <a href="/">Volver a inicio</a>
-        {% for menu in menus %}
+        {% for menu in data["Comedor"]["Menus"] %}
                 <h3>{{menu}}</h3>
-                <b>Fecha: </b>{{hoy[menu]["Fecha"]}}<br>
-                <b>Primer Plato: </b>{{hoy[menu]["Plato1"]}}<br>
-                <b>Segundo Plato: </b>{{hoy[menu]["Plato2"]}}<br>
-                <b>Postre: </b>{{hoy[menu]["Postre"]}}<br>
-                {{hoy[menu]["Pan"]}}
+                <b>Fecha: </b>{{data["Comedor"]["Hoy"][menu]["Fecha"]}}<br>
+                <b>Primer Plato: </b>{{data["Comedor"]["Hoy"][menu]["Plato1"]}}<br>
+                <b>Segundo Plato: </b>{{data["Comedor"]["Hoy"][menu]["Plato2"]}}<br>
+                <b>Postre: </b>{{data["Comedor"]["Hoy"][menu]["Postre"]}}<br>
+                {{data["Comedor"]["Hoy"][menu]["Pan"]}}
                 
         {% endfor %}
         

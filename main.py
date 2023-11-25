@@ -11,9 +11,12 @@ if CONFIG["Comedor"]["Encendido"]:
     Comedor_Menu = {}
     Comedor_Menu_Hoy = {}
 
+def get_date():
+    now = datetime.now()
+    return f"{now.year}-{now.month}-{now.day}"
 
 def get_menu_today(menu):
-    fecha = menu[menu["Fecha"] == "2023-11-24"]
+    fecha = menu[menu["Fecha"] == get_date()]
     e = {
         "Fecha": fecha["Fecha"].iloc[:1][0],
         "Plato1": fecha["Plato1"].iloc[:1][0],
@@ -48,65 +51,79 @@ def check_embed():
     else:
         return False
 
-
+def alldata():
+  load_comedor()
+  data = {
+    "Clase": {
+      "Encargos": {
+        "Encendido": CONFIG["Clase"]["Encargos"]["Encendido"],
+      },
+      "Nombre": CONFIG["Clase"]["Nombre"],
+    },
+    "Escuela": {
+      "Nombre": CONFIG["Escuela"]["Nombre"]
+    },
+    "Comedor": {
+      "Encendido": CONFIG["Comedor"]["Encendido"]
+    },
+    "Embed": check_embed()
+  }
+  if CONFIG["Comedor"]["Encendido"]:
+    data["Comedor"] = {
+      "Encendido": CONFIG["Comedor"]["Encendido"]
+      "Nombre": CONFIG["Comedor"]["Nombre"],
+      "Id": CONFIG["Comedor"]["Id"],
+      "Menus": CONFIG["Comedor"]["Menus"],
+      "Hoy": Comedor_Menu_Hoy,
+    }
+  if CONFIG["Clase"]["Encargos"]["Encendido"]:
+    data["Clase"]["Encargos"] = {
+      "Encendido": CONFIG["Clase"]["Encargos"]["Encendido"],
+      "Hoy": Clase_Encargos.getByQuery({"fecha": get_date()}),
+      "Datos": Clase_Encargos.getAll()
+      
+    }
+  if data["Embed"]:
+    data["Template"] = "embed.html"
+  else:
+    data["Template"] = "v2.html"
+  return data
 @app.route("/")
 def index():
-    can_encargos = CONFIG["Clase"]["Encargos"]["Encendido"]
-    encargoss = Clase_Encargos.getByQuery({"fecha": get_date()})
     return render_template(
         "index.html",
-        escuela_clase=CONFIG["Clase"]["Nombre"],
-        can_encargos=can_encargos,
-        encargos=encargoss,
-        escuela_nombre=CONFIG["Escuela"]["Nombre"],
+        data=alldata()
     )
     # return "Index"
 
 
 @app.route("/menu_comedor")
 def menu_comedor():
-    load_comedor()
+    
     if CONFIG["Comedor"]["Encendido"]:
-        comedor = CONFIG["Comedor"]["Nombre"]
-        return render_template(
-            "menu_comedor.html",
-            hoy=Comedor_Menu_Hoy,
-            menus=CONFIG["Comedor"]["Menus"],
-            comedor=comedor,
-            embed=check_embed(),
-        )
+      return render_template(
+        "menu_comedor.html",
+        data=alldata()
+      )
     else:
-        return render_template("menu_comedor.no_comedor.html")
+      return render_template("menu_comedor.no_comedor.html", data=alldata())
 
 
-def get_date():
-    now = datetime.now()
-    return f"{now.year}-{now.month}-{now.day}"
 
 
 @app.route("/encargos/ver")
 def encargos__ver():
-    can_encargos = CONFIG["Clase"]["Encargos"]["Encendido"]
-    encargoss = Clase_Encargos.getAll()
     return render_template(
         "encargos/ver.html",
-        escuela_clase=CONFIG["Clase"]["Nombre"],
-        can_encargos=can_encargos,
-        encargos=encargoss,
-        embed=check_embed(),
+        data=alldata(),
     )
 
 
 @app.route("/encargos/hoy")
 def encargos__hoy():
-    can_encargos = CONFIG["Clase"]["Encargos"]["Encendido"]
-    encargoss = Clase_Encargos.getByQuery({"fecha": get_date()})
     return render_template(
         "encargos/hoy.html",
-        escuela_clase=CONFIG["Clase"]["Nombre"],
-        can_encargos=can_encargos,
-        encargos=encargoss,
-        embed=check_embed(),
+        data=alldata(),
     )
 
 
@@ -114,8 +131,7 @@ def encargos__hoy():
 def encargos__nuevo():
     return render_template(
         "encargos/nuevo.html",
-        escuela_clase=CONFIG["Clase"]["Nombre"],
-        embed=check_embed(),
+        data=alldata(),
     )
 
 
@@ -124,9 +140,9 @@ def encargos__editar(i):
     enc = Clase_Encargos.getById(i)
     return render_template(
         "encargos/editar.html",
-        escuela_clase=CONFIG["Clase"]["Nombre"],
+        data=alldata(),
         f=enc,
-        embed=check_embed(),
+        id=i
     )
 
 
