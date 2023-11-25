@@ -1,7 +1,7 @@
 {% extends data["Template"] %} {% block contenido %}
 <div id="contenido">
   <div class="content">
-    <h2>Inicio: {{escuela_clase}}, {{escuela_nombre}}</h2>
+    <h2>Inicio: {{data["Clase"]["Nombre"]}}, {{data["Escuela"]["Nombre"]}}</h2>
     {% if data["Encargos"]["Encendido"] %}
     <h3>Encargos</h3>
     <table id="tabla-listado">
