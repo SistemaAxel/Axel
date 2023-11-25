@@ -70,7 +70,7 @@ def alldata():
   }
   if CONFIG["Comedor"]["Encendido"]:
     data["Comedor"] = {
-      "Encendido": CONFIG["Comedor"]["Encendido"]
+      "Encendido": CONFIG["Comedor"]["Encendido"],
       "Nombre": CONFIG["Comedor"]["Nombre"],
       "Id": CONFIG["Comedor"]["Id"],
       "Menus": CONFIG["Comedor"]["Menus"],
