@@ -109,17 +109,23 @@ def menu_comedor():
         data=alldata()
       )
     else:
-      return render_template("menu_comedor.no_comedor.html", data=alldata())
+      return render_template("menu_comedor.apagado.html", data=alldata())
 
 
 
 
 @app.route("/encargos/ver")
 def encargos__ver():
+  if CONFIG["Clase"]["Encargos"]["Encendido"]:
     return render_template(
         "encargos/ver.html",
         data=alldata(),
     )
+  else:
+    return render_template(
+            "encargos/ver.apagado.html",
+            data=alldata(),
+        )
 
 
 @app.route("/encargos/hoy")
