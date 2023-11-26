@@ -5,8 +5,8 @@
     <audio controls>
       <source src="/resumen-voz.mp3" type="audio/mpeg">
       No se puede mostrar el audio.
-    </audio>
-    <b>Hoy hacen {{ data["Weather"]["Temperatura"] }}°C de temperatura, {{ data["Weather"]["Humedad"] }}% de humedad y {{ data["Weather"]["Viento"] }} Km/h de viento.</b>
+    </audio><br>
+    <h3>Hoy hacen {{ data["Weather"]["Temperatura"] }}°C de temperatura, {{ data["Weather"]["Humedad"] }}% de humedad y {{ data["Weather"]["Viento"] }} Km/h de viento.</h3>
     <h3>Hoy tenemos de comida: </h3>
     {% if data["Comedor"]["Encendido"] %}
     {% if data["Comedor"]["Hoy"] != None %}
