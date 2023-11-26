@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
+        <!--
+          Sistema AxelAula 1.0
+          Creado el 2023,
+          Diseño basado de IT Tzartelak 2.0
+          Acceso al codigo:
+            github.com/SistemaAxel/AxelAula
+          Creado por Naiel V
+            Director de EuskadiTech (R)
+          Gracias a:
+            Aula estable, Instituto Ballonti
+              Por ser los primeros en usar AxelAula, y ayudar con las funciones.
+        -->
     <div id="pagina">
       <div id="cabecera">
         <h1><img src="/static/logo.png" alt="Sistema AxelAula" /></h1>
@@ -15,27 +27,90 @@
           <i><a href="https://tech.eus">Creado por Naiel V, EuskadiTech &reg; 2023 (tech.eus)</a></i>
         </ul>
       </div>
-
+    <!--
+      Sistema AxelAula 1.0
+      Creado el 2023,
+      Diseño basado de IT Tzartelak 2.0
+      Acceso al codigo:
+        github.com/SistemaAxel/AxelAula
+      Creado por Naiel V
+        Director de EuskadiTech (R)
+      Gracias a:
+        Aula estable, Instituto Ballonti
+          Por ser los primeros en usar AxelAula, y ayudar con las funciones.
+    -->
       <div id="contenedor">
         <div id="menu_bar">
           <dl>
+                <!--
+                  Sistema AxelAula 1.0
+                  Creado el 2023,
+                  Diseño basado de IT Tzartelak 2.0
+                  Acceso al codigo:
+                    github.com/SistemaAxel/AxelAula
+                  Creado por Naiel V
+                    Director de EuskadiTech (R)
+                  Gracias a:
+                    Aula estable, Instituto Ballonti
+                      Por ser los primeros en usar AxelAula, y ayudar con las funciones.
+                -->
             <dt class="menu_bar-info">INFORMACIÓN</dt>
             <dd><a href="/">Inicio</a></dd>
             <dd><a href="/resumen">Resumen</a></dd>
+            {% if data["Comedor"]["Encendido"] %}
             <dd><a href="/menu_comedor">Menu Comedor</a></dd>
+            {% endif %}
+            {% if data["Encargos"]["Encendido"] %}
             <dt class="menu_bar-info">ENCARGOS</dt>
             <dd><a href="/encargos/nuevo">Nuevo Encargo</a></dd>
             <dd><a href="/encargos/ver">Ver Encargos</a></dd>
             <dd><a href="/encargos/hoy">Encargo(s) de hoy</a></dd>
+            {% endif %}
           </dl>
         </div>
-
+    <!--
+      Sistema AxelAula 1.0
+      Creado el 2023,
+      Diseño basado de IT Tzartelak 2.0
+      Acceso al codigo:
+        github.com/SistemaAxel/AxelAula
+      Creado por Naiel V
+        Director de EuskadiTech (R)
+      Gracias a:
+        Aula estable, Instituto Ballonti
+          Por ser los primeros en usar AxelAula, y ayudar con las funciones.
+    -->
+    
         {% block contenido %}{% endblock %}
-
+    <!--
+      Sistema AxelAula 1.0
+      Creado el 2023,
+      Diseño basado de IT Tzartelak 2.0
+      Acceso al codigo:
+        github.com/SistemaAxel/AxelAula
+      Creado por Naiel V
+        Director de EuskadiTech (R)
+      Gracias a:
+        Aula estable, Instituto Ballonti
+          Por ser los primeros en usar AxelAula, y ayudar con las funciones.
+    -->
+    
         <div class="clear"></div>
       </div>
 
       <div class="clear"></div>
     </div>
+    <!--
+      Sistema AxelAula 1.0
+      Creado el 2023,
+      Diseño basado de IT Tzartelak 2.0
+      Acceso al codigo:
+        github.com/SistemaAxel/AxelAula
+      Creado por Naiel V
+        Director de EuskadiTech (R)
+      Gracias a:
+        Aula estable, Instituto Ballonti
+          Por ser los primeros en usar AxelAula, y ayudar con las funciones.
+    -->
   </body>
 </html>
