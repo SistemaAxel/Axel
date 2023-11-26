@@ -57,7 +57,7 @@ def check_embed():
         return False
 
 def alldata():
-  load_comedor()
+  cmh, cm = load_comedor()
   data = {
     "Encargos": {
       "Encendido": CONFIG["Clase"]["Encargos"]["Encendido"],
@@ -79,7 +79,7 @@ def alldata():
       "Nombre": CONFIG["Comedor"]["Nombre"],
       "Id": CONFIG["Comedor"]["Id"],
       "Menus": CONFIG["Comedor"]["Menus"],
-      "Hoy": Comedor_Menu_Hoy,
+      "Hoy": cmh,
     }
   if CONFIG["Clase"]["Encargos"]["Encendido"]:
     data["Encargos"] = {
