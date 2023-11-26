@@ -1,0 +1,15 @@
+Escuela:
+  Nombre: "Instituto Ballonti"
+Clase:
+  Nombre: "Aula Estable"
+  Encargos:
+    Archivo: "pedidos.json"
+    Encendido: true
+Comedor:
+  Encendido: true
+  Url: "https://raw.githubusercontent.com/SistemaAxel/Comedores/main/comedores"
+  Nombre: "Kanpazar"
+  Id: "00001"
+  Menus:
+    - Basal
+    - NoLegumbres
