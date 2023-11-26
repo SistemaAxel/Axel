@@ -10,17 +10,17 @@
           <b>Estado:</b> {{e["hecho"]}}<br />
           <b>Productos:</b>
           <ul>
-            <li>{{e["prod1"]}}</li>
-            <li>{{e["prod2"]}}</li>
-            <li>{{e["prod3"]}}</li>
-            <li>{{e["prod4"]}}</li>
+            <li>- {{e["prod1"]}}</li>
+            <li>- {{e["prod2"]}}</li>
+            <li>- {{e["prod3"]}}</li>
+            <li>- {{e["prod4"]}}</li>
           </ul>
           <b>Total:</b> {{e["total"]}} €<br />
           <b>Pagado:</b> {{e["pagado"]}}<br />
           <b>Opciones:</b>
           <ul>
-            <li><a href='/encargos/editar/{{e["id"]}}'>Editar</a><br /></li>
-            <li><a
+            <li>- <a href='/encargos/editar/{{e["id"]}}'>Editar</a><br /></li>
+            <li>- <a
               href='/api/encargos/borrar/{{e["id"]}}'
               >Borrar</a
             ></li>
