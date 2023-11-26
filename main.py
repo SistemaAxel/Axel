@@ -7,9 +7,8 @@ import pandas
 
 CONFIG = load(open("config.yaml", "r"), SafeLoader)
 
-if CONFIG["Comedor"]["Encendido"]:
-    Comedor_Menu = {}
-    Comedor_Menu_Hoy = {}
+Comedor_Menu = {}
+Comedor_Menu_Hoy = {}
 
 def get_date():
     now = datetime.now()
