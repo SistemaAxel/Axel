@@ -30,19 +30,18 @@ def get_menu_today(menu):
 
 
 def load_comedor():
-    if not CONFIG["Clase"]["Encargos"]["Encendido"]:
-      Comedor_Menu = {}
-      Comedor_Menu_Hoy = {}
-      return
-    Comedor_Menu = {}
+    cmh = {}
+    cm = {}
+    if not CONFIG["Comedor"]["Encendido"]:
+      return cmh, cm
     for menu in CONFIG["Comedor"]["Menus"]:
         print(f"/{CONFIG['Comedor']['Id']}/{menu}.csv")
         df = pandas.read_csv(
             f"{CONFIG['Comedor']['Url']}/{CONFIG['Comedor']['Id']}/{menu}.csv", sep=","
         )
-        Comedor_Menu[menu] = df
-        Comedor_Menu_Hoy[menu] = get_menu_today(df)
-
+        cm[menu] = df
+        cmh[menu] = get_menu_today(df)
+    return cmh, cm
 
 if CONFIG["Clase"]["Encargos"]["Encendido"]:
     Clase_Encargos = getDb(CONFIG["Clase"]["Encargos"]["Archivo"])
