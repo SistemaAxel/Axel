@@ -114,7 +114,25 @@ def menu_comedor():
       return render_template("menu_comedor.apagado.html", data=alldata())
 
 
+@app.route("/resumen")
+def resumen():
+  return render_template(
+        "resumen.html",
+        data=alldata()
+      )
+@app.route("/resumen-voz.txt")
+def resumen_voz_txt():
+  return render_template(
+        "resumen.txt",
+        data=alldata()
+      )
 
+@app.route("/resumen-voz.mp3")
+def resumen_voz_mp3():
+  return render_template(
+        "resumen.txt",
+        data=alldata()
+      )
 
 @app.route("/encargos/ver")
 def encargos__ver():
