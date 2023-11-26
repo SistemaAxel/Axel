@@ -112,7 +112,7 @@ def weather():
   lon = CONFIG["Escuela"]["Ubicacion"]["Lon"]
   url = f"https://api.open-meteo.com/v1/forecast?latitude={str(lat)}&longitude={str(lon)}&current=temperature_2m,relative_humidity_2m,rain,wind_speed_10m"
   req = requests.get(url).json()["current"]
-  res = {"temperatura": req["temperature_2m"], "humedad": req["relative_humidity_2m"], "lluvia": req["rain"], "viento": req["wind_speed_10m"]}
+  res = {"Temperatura": req["temperature_2m"], "Humedad": req["relative_humidity_2m"], "Lluvia": req["rain"], "Viento": req["wind_speed_10m"]}
   return res
   
 @app.route("/menu_comedor")
