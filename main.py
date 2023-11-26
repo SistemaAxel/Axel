@@ -4,7 +4,7 @@ from yaml import load, SafeLoader
 from pysondb import getDb
 from datetime import datetime
 import pandas
-
+import requests
 CONFIG = load(open("data/config.yaml", "r"), SafeLoader)
 
 Comedor_Menu = {}
@@ -45,7 +45,7 @@ def load_comedor():
 
 if CONFIG["Clase"]["Encargos"]["Encendido"]:
     Clase_Encargos = getDb("data/" + CONFIG["Clase"]["Encargos"]["Archivo"])
-
+ElTiempo = {}
 app = Flask(__name__)
 #gtts(app, route=True, route_path="/gtts")
 
@@ -105,6 +105,15 @@ def sayplease(msg):
   tts.save('./tts.mp3')
   return send_file("./tts.mp3")
 
+
+def weather(lat, lon):
+  lat = CONFIG["Escuela"]["Ubicacion"]["Lat"]
+  lon = CONFIG["Escuela"]["Ubicacion"]["Lon"]
+  url = f"https://api.open-meteo.com/v1/forecast?latitude={str(lat)}&longitude={str(lon)}&current=temperature_2m,relative_humidity_2m,rain,wind_speed_10m"
+  req = requests.get(url).json()["current"]
+  res = {"temperatura": req["temperature_2m"], "humedad": req["relative_humidity_2m"], "lluvia": req["rain"], "viento": req["wind_speed_10m"]}
+  return res
+  
 @app.route("/menu_comedor")
 def menu_comedor():
     
@@ -116,7 +125,10 @@ def menu_comedor():
     else:
       return render_template("menu_comedor.apagado.html", data=alldata())
 
-
+@app route("/api/cron/hourly")
+def api__cron():
+  ElTiempo = weather()
+  return "Refreshed."
 @app.route("/resumen")
 def resumen():
   return render_template(
@@ -257,4 +269,5 @@ def api__encargos__borrar(i):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=12321, debug=True)
+  ElTiempo = weather()
+  app.run(host="0.0.0.0", port=12321, debug=True)
