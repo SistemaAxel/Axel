@@ -179,6 +179,7 @@ def api__encargos__nuevo():
     prod3 = request.form["prod3"]
     prod4 = request.form["prod4"]
     email = request.form["email"]
+    hecho = request.form["hecho"]
     total = float(request.form["total"].replace(",", "."))
     pagado = float(request.form["pagado"].replace(",", "."))
     Clase_Encargos.add(
@@ -190,7 +191,7 @@ def api__encargos__nuevo():
             "prod3": prod3,
             "prod4": prod4,
             "email": email,
-            "hecho": "No",
+            "hecho": hecho,
             "total": total,
             "pagado": pagado,
         }
@@ -207,6 +208,7 @@ def api__encargos__editar(i):
     prod3 = request.form["prod3"]
     prod4 = request.form["prod4"]
     email = request.form["email"]
+    hecho = request.form["hecho"]
     total = float(request.form["total"].replace(",", "."))
     pagado = float(request.form["pagado"].replace(",", "."))
     Clase_Encargos.updateById(
@@ -219,7 +221,7 @@ def api__encargos__editar(i):
             "prod3": prod3,
             "prod4": prod4,
             "email": email,
-            "hecho": "No",
+            "hecho": hecho,
             "total": total,
             "pagado": pagado,
         },
