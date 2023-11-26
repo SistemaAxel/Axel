@@ -125,7 +125,7 @@ def menu_comedor():
     else:
       return render_template("menu_comedor.apagado.html", data=alldata())
 
-@app route("/api/cron/hourly")
+@app.route("/api/cron/hourly")
 def api__cron():
   ElTiempo = weather()
   return "Refreshed."
