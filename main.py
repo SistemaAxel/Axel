@@ -106,7 +106,7 @@ def sayplease(msg):
   return send_file("./tts.mp3")
 
 
-def weather(lat, lon):
+def weather():
   lat = CONFIG["Escuela"]["Ubicacion"]["Lat"]
   lon = CONFIG["Escuela"]["Ubicacion"]["Lon"]
   url = f"https://api.open-meteo.com/v1/forecast?latitude={str(lat)}&longitude={str(lon)}&current=temperature_2m,relative_humidity_2m,rain,wind_speed_10m"
