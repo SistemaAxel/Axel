@@ -13,7 +13,7 @@ if CONFIG["Comedor"]["Encendido"]:
 
 def get_date():
     now = datetime.now()
-    return f"{now.year}-{now.month}-{now.day}"
+    return f"{now.year}-{now.month:02d}-{now.day:02d}"
 
 def get_menu_today(menu):
     fecha = menu[menu["Fecha"] == get_date()]
@@ -31,6 +31,10 @@ def get_menu_today(menu):
 
 
 def load_comedor():
+    if not CONFIG["Clase"]["Encargos"]["Encendido"]:
+      Comedor_Menu = {}
+      Comedor_Menu_Hoy = {}
+      return
     Comedor_Menu = {}
     for menu in CONFIG["Comedor"]["Menus"]:
         print(f"/{CONFIG['Comedor']['Id']}/{menu}.csv")
@@ -130,24 +134,37 @@ def encargos__ver():
 
 @app.route("/encargos/hoy")
 def encargos__hoy():
+  if not CONFIG["Clase"]["Encargos"]["Encendido"]:
     return render_template(
-        "encargos/hoy.html",
-        data=alldata(),
-    )
+        "encargos/hoy.apagado.html",
+        data=alldata(),)
+  return render_template(
+    "encargos/hoy.html",
+    data=alldata(),
+  )
+    
 
 
 @app.route("/encargos/nuevo")
 def encargos__nuevo():
+  if not CONFIG["Clase"]["Encargos"]["Encendido"]:
     return render_template(
+        "encargos/nuevo.apagado.html",
+        data=alldata(),)
+  return render_template(
         "encargos/nuevo.html",
         data=alldata(),
-    )
+  )
 
 
 @app.route("/encargos/editar/<i>")
 def encargos__editar(i):
-    enc = Clase_Encargos.getById(i)
+  if not CONFIG["Clase"]["Encargos"]["Encendido"]:
     return render_template(
+        "encargos/hoy.apagado.html",
+        data=alldata(),)
+  enc = Clase_Encargos.getById(i)
+  return render_template(
         "encargos/editar.html",
         data=alldata(),
         f=enc,
