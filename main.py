@@ -35,7 +35,7 @@ def load_comedor():
     if not CONFIG["Comedor"]["Encendido"]:
       return cmh, cm
     for menu in CONFIG["Comedor"]["Menus"]:
-        print(f"/{CONFIG['Comedor']['Id']}/{menu}.csv")
+        #print(f"/{CONFIG['Comedor']['Id']}/{menu}.csv")
         df = pandas.read_csv(
             f"{CONFIG['Comedor']['Url']}/{CONFIG['Comedor']['Id']}/{menu}.csv", sep=","
         )
