@@ -1,5 +1,8 @@
 Escuela:
   Nombre: "Instituto Ballonti"
+  Ubicacion:
+    Lat: 43.3161355
+    Lon: -3.0259871
 Clase:
   Nombre: "Aula Estable"
   Encargos:
