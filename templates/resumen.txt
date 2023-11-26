@@ -1,4 +1,5 @@
-Hola, soy AxelAula, la Inteligencia Artificial del aula.
+Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de hoy:
+  Hoy hacen {{ data["Weather"]["Temperatura"] }} grados de temperatura, {{ data["Weather"]["Humedad"] }} por ciento de humedad y {{ data["Weather"]["Viento"] }} Kilometros hora.
   {% if data["Comedor"]["Encendido"] %}
     Hoy tenemos de comida: 
     {% if data["Comedor"]["Hoy"] != None %}

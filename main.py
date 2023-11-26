@@ -71,7 +71,8 @@ def alldata():
     "Comedor": {
       "Encendido": CONFIG["Comedor"]["Encendido"]
     },
-    "Embed": check_embed()
+    "Embed": check_embed(),
+    "Weather": ElTiempo
   }
   if CONFIG["Comedor"]["Encendido"]:
     data["Comedor"] = {

@@ -1,15 +1,17 @@
 {% extends data["Template"] %} {% block contenido %}
 <div id="contenido">
   <div class="content">
+    <h2>Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de hoy:</h2>
     <audio controls>
       <source src="/resumen-voz.mp3" type="audio/mpeg">
       No se puede mostrar el audio.
     </audio>
-    <h2>Hoy tenemos de comida: </h2>
+    <b>Hoy hacen {{ data["Weather"]["Temperatura"] }}°C de temperatura, {{ data["Weather"]["Humedad"] }}% de humedad y {{ data["Weather"]["Viento"] }} Km/h de viento.</b>
+    <h3>Hoy tenemos de comida: </h3>
     {% if data["Comedor"]["Encendido"] %}
     {% if data["Comedor"]["Hoy"] != None %}
     {% for menu in data["Comedor"]["Menus"] %}
-    <h3>Menu {{menu}}</h3>
+    <h4>Menu {{menu}}</h4>
     {% if data["Comedor"]["Hoy"][menu] == None %}
     <b>No disponible.</b>
     {% else %}
@@ -39,14 +41,6 @@
           </ul>
           <b>Total:</b> {{e["total"]}} €<br />
           <b>Pagado:</b> {{e["pagado"]}} €<br />
-          <b>Opciones:</b>
-          <ul>
-            <li>- <a href='/encargos/editar/{{e["id"]}}'>Editar</a><br /></li>
-            <li>- <a
-              href='/api/encargos/borrar/{{e["id"]}}'
-              >Borrar</a
-            ></li>
-          </ul>
           <hr />
         {% endfor %}
     {% endif %}
