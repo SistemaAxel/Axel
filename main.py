@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-#from flask_gtts import gtts
+from gtts import gTTS
 from yaml import load, SafeLoader
 from pysondb import getDb
 from datetime import datetime
@@ -100,7 +100,10 @@ def index():
         data=alldata()
     )
     # return "Index"
-
+def sayplease(msg):
+  tts = gTTS(msg)
+  tts.save('./tts.mp3')
+  return send_file("./tts.mp3")
 
 @app.route("/menu_comedor")
 def menu_comedor():
@@ -129,10 +132,10 @@ def resumen_voz_txt():
 
 @app.route("/resumen-voz.mp3")
 def resumen_voz_mp3():
-  return render_template(
+  return sayplease(render_template(
         "resumen.txt",
         data=alldata()
-      )
+      ))
 
 @app.route("/encargos/ver")
 def encargos__ver():
