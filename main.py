@@ -5,7 +5,7 @@ from pysondb import getDb
 from datetime import datetime
 import pandas
 
-CONFIG = load(open("config.yaml", "r"), SafeLoader)
+CONFIG = load(open("data/config.yaml", "r"), SafeLoader)
 
 Comedor_Menu = {}
 Comedor_Menu_Hoy = {}
@@ -44,7 +44,7 @@ def load_comedor():
     return cmh, cm
 
 if CONFIG["Clase"]["Encargos"]["Encendido"]:
-    Clase_Encargos = getDb(CONFIG["Clase"]["Encargos"]["Archivo"])
+    Clase_Encargos = getDb("data/" + CONFIG["Clase"]["Encargos"]["Archivo"])
 
 app = Flask(__name__)
 #gtts(app, route=True, route_path="/gtts")

@@ -1,4 +1,6 @@
-Flask-gTTS==0.18
+gTTS
 Flask
 pysondb
 pandas
+requests
+pyyaml
