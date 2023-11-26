@@ -1,6 +1,10 @@
 {% extends data["Template"] %} {% block contenido %}
 <div id="contenido">
   <div class="content">
+    <audio controls>
+      <source src="/resumen-voz.mp3" type="audio/mpeg">
+      No se puede mostrar el audio.
+    </audio>
     <h2>Hoy tenemos de comida: </h2>
     {% if data["Comedor"]["Encendido"] %}
     {% if data["Comedor"]["Hoy"] != None %}
