@@ -18,11 +18,11 @@ def get_menu_today(menu):
     fecha = menu[menu["Fecha"] == get_date()]
     if len(fecha["Fecha"].iloc[:1]) > 0:
       e = {
-        "Fecha": fecha["Fecha"].iloc[:1][-1],
-        "Plato1": fecha["Plato1"].iloc[:1][-1],
-        "Plato2": fecha["Plato2"].iloc[:1][-1],
-        "Postre": fecha["Postre"].iloc[:1][-1],
-        "Pan": fecha["Pan"].iloc[:1][-1],
+        "Fecha": fecha["Fecha"].iloc[:1],
+        "Plato1": fecha["Plato1"].iloc[:1],
+        "Plato2": fecha["Plato2"].iloc[:1],
+        "Postre": fecha["Postre"].iloc[:1],
+        "Pan": fecha["Pan"].iloc[:1],
       }
     else:
       e = None
