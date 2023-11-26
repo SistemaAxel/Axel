@@ -2,7 +2,6 @@
 <div id="contenido">
   <div class="content">
         <h2>Menu Automatico de {{data["Comedor"]["Nombre"]}}</h2>
-        <a href="/">Volver a inicio</a>
         {% for menu in data["Comedor"]["Menus"] %}
                 <h3>{{menu}}</h3>
                 {% if data["Comedor"]["Hoy"][menu] == None %}
