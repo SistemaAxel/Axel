@@ -1,0 +1,35 @@
+Hola, soy AxelAula, la Inteligencia Artificial del aula.
+  {% if data["Comedor"]["Encendido"] %}
+    Hoy tenemos de comida: 
+    {% if data["Comedor"]["Hoy"] != None %}
+      {% for menu in data["Comedor"]["Menus"] %}
+        Menu {{menu}}, 
+        {% if data["Comedor"]["Hoy"][menu] == None %}
+          No disponible.
+        {% else %}
+          Primer Plato: {{data["Comedor"]["Hoy"][menu]["Plato1"]}}, 
+          Segundo Plato: {{data["Comedor"]["Hoy"][menu]["Plato2"]}}, 
+          Postre: {{data["Comedor"]["Hoy"][menu]["Postre"]}}, 
+          {{data["Comedor"]["Hoy"][menu]["Pan"]}}. 
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      No Disponible.
+    {% endif %}
+  {% endif %}
+    
+    
+  {% if data["Encargos"]["Encendido"] %}
+    
+    {% for e in data["Encargos"]["Hoy"] %}
+      Encargo de {{e["cliente"]}}:
+      Estado: {{e["hecho"]}},
+      Productos:
+        {{e["prod1"]}}, 
+        {{e["prod2"]}},
+        {{e["prod3"]}},
+        {{e["prod4"]}}.
+      Total: {{e["total"]}} Euros,
+      Pagado: {{e["pagado"]}} Euros.
+    {% endfor %}
+  {% endif %}
