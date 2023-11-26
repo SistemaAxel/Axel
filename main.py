@@ -102,7 +102,7 @@ def index():
     # return "Index"
 def sayplease(msg):
   tts = gTTS(msg)
-  tts.save('./tts.mp3')
+  tts.save('./tts.mp3', lang="es")
   return send_file("./tts.mp3")
 
 @app.route("/menu_comedor")
