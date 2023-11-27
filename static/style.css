@@ -228,7 +228,7 @@ ol .detalles li a{background:transparent url(detalles.gif) no-repeat right; padd
 
 
 /* ............................. BOTONES EN FORMULARIOS ............................. */
-.acciones{text-align:center; margin-top:1em;}
+.acciones{text-align:left; margin-top:1em; margin-bottom: 1em;}
 .acciones li{display:inline; margin-right:2em;}
 .acciones input{border:0px none; text-decoration:none; text-align:left; cursor:pointer;}
 .acciones a{text-decoration:underline;}
