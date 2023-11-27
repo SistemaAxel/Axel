@@ -5,7 +5,6 @@
     {% if data["Encargos"]["Encendido"] %}
     
     {% for e in data["Encargos"]["Datos"] %}
-        
     <details open>
       <summary><h3>Encargo de {{e["cliente"]}} para el {{e["fecha"]}}</h3></summary>
         <b>Email:</b> {{e["email"]}}<br />
