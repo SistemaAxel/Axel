@@ -6,7 +6,7 @@
     
     {% for e in data["Encargos"]["Datos"] %}
     <details open>
-      <summary><h3>Encargo de {{e["cliente"]}} para el {{e["fecha"]}}</h3></summary>
+      <summary>Encargo de {{e["cliente"]}} para el {{e["fecha"]}}</summary>
         <b>Email:</b> {{e["email"]}}<br />
         <b>Estado:</b> {{e["hecho"]}}<br />
         <b>Productos:</b>
