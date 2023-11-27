@@ -2,42 +2,13 @@
 <div id="contenido">
   <div class="content">
     <h2>Inicio: {{data["Clase"]["Nombre"]}}, {{data["Escuela"]["Nombre"]}}</h2>
-    {% if data["Encargos"]["Encendido"] %}
-    <h3>Encargos</h3>
-    <table id="tabla-listado">
-      <tbody>
-        <tr>
-          <th scope="col">Fecha</th>
-          <th scope="col">Clientx</th>
-          <th scope="col">Email</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Pedido</th>
-          <th scope="col">Subtotal €</th>
-          <th scope="col">Pagado €</th>
-          <th scope="col">Acciones</th>
-        </tr>
-        {% for e in data["Encargos"]["Datos"] %}
-        <tr>
-          <td>{{e["fecha"]}}</td>
-          <td>{{e["cliente"]}}</td>
-          <td>{{e["email"]}}</td>
-          <td>{{e["hecho"]}}</td>
-          <td>
-            {{e["prod1"]}}<br />{{e["prod2"]}}<br />{{e["prod3"]}}<br />{{e["prod4"]}}
-          </td>
-          <td>{{e["total"]}}</td>
-          <td>{{e["pagado"]}}</td>
-          <td>
-            <a href='/encargos/editar/{{e["id"]}}'>Editar</a><br /><br /><a
-              href='/api/encargos/borrar/{{e["id"]}}'
-              >Borrar</a
-            >
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% endif %}
+    <h3>¡Bienvenidx al panel de control de AxelAula!</h3>
+    <br>
+    <b>Para acceder a otras paginas:</b> Usar el menu lateral izquierdo.
+    <br>
+    <b>Para incrustar una pagina:</b>
+    <br>
+    Añadir "?embed=1" (sin las comillas) al final de la url de la pagina, y añadirla a Google Sites con el boton Incrustar (o si es otra plataforma, a traves de un iframe)
   </div>
 </div>
 {% endblock %}
