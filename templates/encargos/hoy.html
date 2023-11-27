@@ -20,13 +20,13 @@
         <b>Total:</b> {{e["total"]}} €<br />
         <b>Pagado:</b> {{e["pagado"]}} €<br />
         <div class="acciones">
-          <a href="/encargos/editar/{{resp['id']}}"
+          <a href="/encargos/editar/{{e['id']}}"
             style="
               border-radius: 15px;
               padding: 10px;
               background-color: lightskyblue;
             ">Editar</a>
-          <a href="/api/encargos/borrar/{{resp['id']}}"
+          <a href="/api/encargos/borrar/{{e['id']}}"
             style="
               border-radius: 15px;
               padding: 10px;
