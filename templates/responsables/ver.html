@@ -7,11 +7,21 @@
         <summary>{{resp['tel']}}: {{resp['apodo']}}</summary>
         <b>Email:</b> {{resp['email']}}<br>
         <b>F. Nacimiento:</b> {{resp['fnac']}}<br>
-        <b>Opciones:</b>
-        <ul>
-          <li><a href="/responsables/editar/{{resp['id']}}">Editar</a></li>
-          <li><a href="/api/responsables/borrar/{{resp['id']}}">Borrar</a></li>
-        </ul>
+
+        <div class="acciones">
+          <a href="/almuerzo/editar/{{resp['id']}}"
+            style="
+              border-radius: 15px;
+              padding: 10px;
+              background-color: lightskyblue;
+            ">Editar</a>
+          <a href="/api/almuerzo/borrar/{{resp['id']}}"
+            style="
+              border-radius: 15px;
+              padding: 10px;
+              background-color: lightcoral;
+            ">Borrar</a>
+        </div>
       </details>
     {% endfor %}
 
