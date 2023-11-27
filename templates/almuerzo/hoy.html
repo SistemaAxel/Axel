@@ -1,0 +1,21 @@
+{% extends data["Template"] %} {% block contenido %}
+<div id="contenido">
+  <div class="content">
+    <h2>Responsables de Tareas para Hoy</h2>
+    {% for resp in data["Almuerzo"]["Hoy"] %}
+      <details>
+        <summary>{{resp['fecha']}}</summary>
+        <p>{% autoescape false %}{{resp['resp'] | replace(";", "<br>")}}{% endautoescape %}</p><br>
+        <b>Opciones:</b>
+        <ul>
+          <li><a href="/almuerzo/editar/{{resp['id']}}">Editar</a></li>
+          <li><a href="/api/almuerzo/borrar/{{resp['id']}}">Borrar</a></li>
+        </ul>
+      </details>
+    {% endfor %}
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% endblock %}

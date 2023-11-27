@@ -1,0 +1,23 @@
+{% extends data["Template"] %} {% block contenido %}
+<div id="contenido">
+  <div class="content">
+    <h2>Ver Responsables</h2>
+    {% for resp in data["Responsables"]["Datos"] %}
+      <details>
+        <summary>{{resp['apodo']}}</summary>
+        <b>Email:</b> {{resp['email']}}<br>
+        <b>Telefono:</b> {{resp['tel']}}<br>
+        <b>F. Nacimiento:</b> {{resp['fnac']}}<br>
+        <b>Opciones:</b>
+        <ul>
+          <li><a href="/responsables/editar/{{resp['id']}}">Editar</a></li>
+          <li><a href="/api/responsables/borrar/{{resp['id']}}">Borrar</a></li>
+        </ul>
+      </details>
+    {% endfor %}
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% endblock %}

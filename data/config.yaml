@@ -8,6 +8,12 @@ Clase:
   Encargos:
     Archivo: "pedidos.json"
     Encendido: true
+  Responsables:
+    Encendido: true
+    Archivo: "responsables.json"
+  ResponsablesTareas:
+    Encendido: true
+    Archivo: "almuerzo.json"
 Comedor:
   Encendido: true
   Url: "https://raw.githubusercontent.com/SistemaAxel/Comedores/main/comedores"

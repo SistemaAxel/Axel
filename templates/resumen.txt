@@ -1,5 +1,5 @@
 Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de hoy:
-  Hoy hacen {{ data["Weather"]["Temperatura"] }} grados de temperatura, {{ data["Weather"]["Humedad"] }} por ciento de humedad y {{ data["Weather"]["Viento"] }} Kilometros hora de viento.
+  Hoy hacen {{ data["Weather"]["Temperatura"] }} grados de temperatura {{ data["Weather"]["Humedad"] }} por ciento de humedad y {{ data["Weather"]["Viento"] }} Kilometros hora de viento.
   {% if data["Comedor"]["Encendido"] %}
     Hoy tenemos de comida: 
     {% if data["Comedor"]["Hoy"] != None %}
@@ -32,6 +32,15 @@ Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de h
         {{e["prod4"]}}.
       Total: {{e["total"]}} Euros,
       Pagado: {{e["pagado"]}} Euros.
+    {% endfor %}
+  {% endif %}
+
+
+  {% if data["Almuerzo"]["Encendido"] %}
+    
+    {% for e in data["Almuerzo"]["Hoy"] %}
+    Estos son los responsables de tareas para hoy: 
+      {% autoescape false %}{{e['resp'] | replace(";", ",")}}{% endautoescape %}
     {% endfor %}
   {% endif %}
 ¡Espero de que tengais un dia genial!

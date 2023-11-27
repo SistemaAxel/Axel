@@ -1,0 +1,49 @@
+{% extends data["Template"] %} {% block contenido %}
+<div id="contenido">
+  <div class="content">
+    <h2>Establecer nuevos Responsables de Tareas</h2>
+
+    <form name="alumno" method="post" action="/api/almuerzo/nuevo">
+      <fieldset class="f-user">
+        <legend>Responsable:</legend>
+          <dt>
+            <label for="fecha">Fecha:</label
+            ><span
+              >(Opcional,
+              <abbr title="Por ejemplo:">p.e.:</abbr> 2009-12-16)</span
+            >
+          </dt>
+          <dd>
+            <input
+              type="text"
+              name="fecha"
+              maxlength="10"
+              size="15"
+              value=""
+              id="fecha"
+            />
+          </dd>
+          <dt><label for="resp">Responsables: </label><span>(Nota: Para poner una nueva linea, anadir un punto y coma al final.)</span></dt>
+          <dd>
+            <textarea name="resp" id="resp" cols="30" rows="10"></textarea>
+          </dd>
+      </fieldset>
+
+      <div class="acciones">
+        <input
+          type="submit"
+          value="registrar responsable"
+          style="
+            border-radius: 15px;
+            padding: 10px;
+            background-color: lightgreen;
+          "
+        />
+      </div>
+    </form>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% endblock %}
