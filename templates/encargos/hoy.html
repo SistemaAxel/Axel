@@ -4,7 +4,7 @@
     <h2>Encargos para hoy</h2>
     {% if data["Encargos"]["Encendido"] %}
     
-    {% for e in data["Encargos"]["Datos"] %}
+    {% for e in data["Encargos"]["Hoy"] %}
     <details open>
       <summary>Encargo de {{e["cliente"]}} para el {{e["fecha"]}}</summary>
         <b>Email:</b> {{e["email"]}}<br />
