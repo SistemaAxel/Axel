@@ -165,3 +165,6 @@ cython_debug/
 
 # TTS Ignore
 data/tts.mp3
+
+# Data ignore (Only json, keep yaml)
+data/*.json

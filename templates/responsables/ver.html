@@ -4,9 +4,8 @@
     <h2>Ver Responsables</h2>
     {% for resp in data["Responsables"]["Datos"] %}
       <details>
-        <summary>{{resp['apodo']}}</summary>
+        <summary>{{resp['tel']}}: {{resp['apodo']}}</summary>
         <b>Email:</b> {{resp['email']}}<br>
-        <b>Telefono:</b> {{resp['tel']}}<br>
         <b>F. Nacimiento:</b> {{resp['fnac']}}<br>
         <b>Opciones:</b>
         <ul>
