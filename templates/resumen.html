@@ -15,11 +15,32 @@
     {% if data["Comedor"]["Hoy"][menu] == None %}
     <b>No disponible.</b>
     {% else %}
-    <b>Fecha: </b>{{data["Comedor"]["Hoy"][menu]["Fecha"]}}<br>
-    <b>Primer Plato: </b>{{data["Comedor"]["Hoy"][menu]["Plato1"]}}<br>
-    <b>Segundo Plato: </b>{{data["Comedor"]["Hoy"][menu]["Plato2"]}}<br>
-    <b>Postre: </b>{{data["Comedor"]["Hoy"][menu]["Postre"]}}<br>
+    <b>Primer Plato: </b>
+    {% if "*" in data["Comedor"]["Hoy"][menu]["Plato1"] %}
+    <u>
+    {{data["Comedor"]["Hoy"][menu]["Plato1"]}}</u>
+    {% else %}
+    {{data["Comedor"]["Hoy"][menu]["Plato1"]}}
+    {% endif %}
+    <br>
+    <b>Segundo Plato: </b>{% if "*" in data["Comedor"]["Hoy"][menu]["Plato2"] %}
+    <u>
+      {{data["Comedor"]["Hoy"][menuComedor"2"]}}</u>
+    {% else %}
+    {{data["Comedor"]["Hoy"][menu]["Plato2"]}}
+    {% endif %}<br>
+    <b>Postre: </b>{% if "*" in data["Comedor"]["Hoy"][menu]["Postre"] %}
+    <u>
+      {{data["Comedor"]["Hoy"][menu]["Postre"]}}</u>
+    {% else %}
+    {{data["Comedor"]["Hoy"][menu]["Postre"]}}
+    {% endif %}<br>
+    {% if "*" in data["Comedor"]["Hoy"][menu]["Pan"] %}
+    <u>
+      {{data["Comedor"]["Hoy"][menu]["Pan"]}}</u>
+    {% else %}
     {{data["Comedor"]["Hoy"][menu]["Pan"]}}
+    {% endif %}
     {% endif %}
     {% endfor %}
     {% else %}
@@ -51,7 +72,7 @@
         {% autoescape false %}{{e['resp'] | replace(";", "<br>")}}{% endautoescape %}
       {% endfor %}
     {% endif %}
-    <h3><i>¡Espero de que tengais un dia genial!</i></h3>
+    <h3><i>¡Espero que tengais un dia geniel!</i></h3>
   </div>
 </div>
 

@@ -8,10 +8,10 @@ Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de h
         {% if data["Comedor"]["Hoy"][menu] == None %}
           No disponible.
         {% else %}
-          Primer Plato: {{data["Comedor"]["Hoy"][menu]["Plato1"]}}, 
-          Segundo Plato: {{data["Comedor"]["Hoy"][menu]["Plato2"]}}, 
-          Postre: {{data["Comedor"]["Hoy"][menu]["Postre"]}}, 
-          {{data["Comedor"]["Hoy"][menu]["Pan"]}}. 
+          Primer Plato: {{data["Comedor"]["Hoy"][menu]["Plato1"] | replace("*", " (Plato Alternativo)")}}, 
+          Segundo Plato: {{data["Comedor"]["Hoy"][menu]["Plato2"] | replace("*", " (Plato Alternativo)")}}, 
+          Postre: {{data["Comedor"]["Hoy"][menu]["Postre"] | replace("*", " (Plato Alternativo)")}}, 
+          {{data["Comedor"]["Hoy"][menu]["Pan"] | replace("*", " (Plato Alternativo)")}}. 
         {% endif %}
       {% endfor %}
     {% else %}
@@ -43,4 +43,4 @@ Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de h
       {% autoescape false %}{{e['resp'] | replace(";", ",")}}{% endautoescape %}
     {% endfor %}
   {% endif %}
-¡Espero de que tengais un dia genial!
+¡Espero que tengais un dia genial!
