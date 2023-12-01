@@ -1,0 +1,18 @@
+{% if data["Comedor"]["Encendido"] %}
+  Hoy tenemos de comida: 
+  {% if data["Comedor"]["Hoy"] != None %}
+    {% for menu in data["Comedor"]["Menus"] %}
+      Menu {{menu}}, 
+      {% if data["Comedor"]["Hoy"][menu] == None %}
+        No disponible.
+      {% else %}
+        Primer Plato: {{data["Comedor"]["Hoy"][menu]["Plato1"] | replace("*", " (Plato Alternativo)")}}, 
+        Segundo Plato: {{data["Comedor"]["Hoy"][menu]["Plato2"] | replace("*", " (Plato Alternativo)")}}, 
+        Postre: {{data["Comedor"]["Hoy"][menu]["Postre"] | replace("*", " (Plato Alternativo)")}}, 
+        {{data["Comedor"]["Hoy"][menu]["Pan"] | replace("*", " (Plato Alternativo)")}}. 
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    No Disponible.
+  {% endif %}
+{% endif %}

@@ -148,6 +148,14 @@ def menu_comedor():
         return render_template("menu_comedor.apagado.html", data=alldata())
 
 
+@app.route("/menu_comedor.txt")
+def menu_comedor():
+    if CONFIG["Comedor"]["Encendido"]:
+        return render_template("menu_comedor.txt", data=alldata())
+    else:
+        return "Comedor no disponible"
+
+
 @app.route("/api/cron/hourly")
 def api__cron():
     ElTiempo = weather()
