@@ -149,7 +149,7 @@ def menu_comedor():
 
 
 @app.route("/menu_comedor.txt")
-def menu_comedor():
+def menu_comedor_txt():
     if CONFIG["Comedor"]["Encendido"]:
         return render_template("menu_comedor.txt", data=alldata())
     else:
