@@ -158,6 +158,7 @@ def menu_comedor_txt():
 
 @app.route("/api/cron/hourly")
 def api__cron():
+    global ElTiempo
     ElTiempo = weather()
     return "Refreshed."
 
