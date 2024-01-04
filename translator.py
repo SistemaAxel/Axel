@@ -13,7 +13,7 @@ def auth(user, password):
       'username': user,
       'password': password,
   }
-  response = requests.post('htts://ba.tech.eus/api/auth', headers=headers, json=json_data)
+  response = requests.post('https://ba.tech.eus/api/auth', headers=headers, json=json_data)
   return response.json()["token"]
 
 def get_json(token):
