@@ -13,12 +13,12 @@ def auth(user, password):
       'username': user,
       'password': password,
   }
-  response = requests.post('http://127.0.0.1:14000/api/auth', headers=headers, json=json_data)
+  response = requests.post('htts://ba.tech.eus/api/auth', headers=headers, json=json_data)
   return response.json()["token"]
 
 def get_json(token):
   headers = {'Authorization': 'Bearer ' + token}
-  response = requests.get('http://127.0.0.1:14000/api/et_axelaula_comedor/get_csv/v1?verbose=0', headers=headers)
+  response = requests.get('https://ba.tech.eus/api/et_axelaula_comedor/get_csv/v1?verbose=0', headers=headers)
   return response.json()
 
 a = auth(os.environ["ET_USER"],os.environ["ET_PASS"])
