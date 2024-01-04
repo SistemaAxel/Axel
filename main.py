@@ -86,7 +86,7 @@ def alldata():
         data["Comedor"] = {
             "Encendido": CONFIG["Comedor"]["Encendido"],
             "Nombre": CONFIG["Comedor"]["Nombre"],
-            "Id": CONFIG["Comedor"]["Id"],
+            "CodigoPostal": CONFIG["Comedor"]["CodigoPostal"],
             "Menus": CONFIG["Comedor"]["Menus"],
             "Hoy": cmh,
         }
