@@ -40,7 +40,7 @@ def load_comedor():
     for menu in CONFIG["Comedor"]["Menus"]:
         # print(f"/{CONFIG['Comedor']['Id']}/{menu}.csv")
         df = pandas.read_csv(
-            f"{CONFIG['Comedor']['Url']}/{CONFIG['Comedor']['Id']}/{menu}.csv", sep=","
+            f"{CONFIG['Comedor']['Url']}?cp={CONFIG['Comedor']['CodigoPostal']}&m={menu}&c={CONFIG['Comedor']['Nombre']}", sep=","
         )
         cm[menu] = df
         cmh[menu] = get_menu_today(df)
