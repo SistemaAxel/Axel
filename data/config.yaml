@@ -16,9 +16,9 @@ Clase:
     Archivo: "almuerzo.json"
 Comedor:
   Encendido: true
-  Url: "https://raw.githubusercontent.com/SistemaAxel/Comedores/main/comedores"
+  Url: "https://translator.axau.tech.eus/get_data_for_me.csv"
   Nombre: "Kanpazar"
-  Id: "00001"
+  CodigoPostal: 48920
   Menus:
     - Basal
     - NoLegumbres
