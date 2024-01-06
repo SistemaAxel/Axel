@@ -21,8 +21,8 @@ def get_json(token):
   response = requests.get('https://ba.tech.eus/api/et_axelaula_comedor/get_csv/v1?verbose=0', headers=headers)
   return response.json()
 
-a = auth(os.environ["ET_USER"],os.environ["ET_PASS"])
-print(get_json(a))
+
+#print(get_json(a))
 def f(k):
     now = datetime.datetime.fromtimestamp(k[3])
     l = f"{now.year}-{now.month:02d}-{now.day:02d}"
@@ -33,7 +33,7 @@ def c(arr, args):
        return True
 @app.route('/get_data_for_me.csv')
 def index():
-    request.args["cp"]
+    a = auth(os.environ["ET_USER"],os.environ["ET_PASS"])
     j = get_json(a)
     y = "Fecha,Plato1,Plato2,Postre,Pan\n"
     e = [f(x) for x in j if c(x, request.args)]
