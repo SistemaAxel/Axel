@@ -1,44 +1,77 @@
 import datetime
 import requests
-from flask import Flask, request
-import os
-app = Flask(__name__)
-
-def auth(user, password):
-  headers = {
-      # Already added when you pass json=
-      # 'Content-Type': 'application/json',
-  }
-  json_data = {
-      'username': user,
-      'password': password,
-  }
-  response = requests.post('https://ba.tech.eus/api/auth', headers=headers, json=json_data)
-  return response.json()["token"]
-
-def get_json(token):
-  headers = {'Authorization': 'Bearer ' + token}
-  response = requests.get('https://ba.tech.eus/api/et_axelaula_comedor/get_csv/v1?verbose=0', headers=headers)
-  return response.json()
 
 
-#print(get_json(a))
-def f(k):
-    now = datetime.datetime.fromtimestamp(k[3])
-    l = f"{now.year}-{now.month:02d}-{now.day:02d}"
-    return {"codigo_postal": k[0], "comedor": k[1], "menu": k[2], "fecha": l, "plato1": k[4], "plato2": k[5], "plato3": k[6], "plato4": k[7]}
-def c(arr, args):
-    q = f(arr)
-    if q["codigo_postal"] == int(args["cp"]) and q["comedor"] == args["c"] and q["menu"] == args["m"]:
-       return True
-@app.route('/get_data_for_me.csv')
-def index():
-    a = auth(os.environ["ET_USER"],os.environ["ET_PASS"])
-    j = get_json(a)
-    y = "Fecha,Plato1,Plato2,Postre,Pan\n"
-    e = [f(x) for x in j if c(x, request.args)]
-    for i in e:
-       y += f"{i['fecha']},{i['plato1']},{i['plato2']},{i['plato3']},{i['plato4']}\n"
-    return y
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=12321, debug=False)
+class Client:
+    def __init__(self, user, password, RCONFIG):
+        self.user = user
+        self.password = password
+        self.conf = RCONFIG
+        self.base = "https://bb.tech.eus"
+    def get_comedor(self, menu):
+        j = self._comedor_get_json()
+        e = [self._comedor_to_dict(x) for x in j if self._comedor_search(x, menu)]
+        return e
+
+    def _comedor_search(self, array, menu):
+        q = self._comedor_to_dict(array)
+        if (
+            q["codigo_postal"] == int(self.conf["Comedor"]["CofigoPostal"])
+            and q["comedor"] == self.conf["Comedor"]["Nombre"]
+            and q["menu"] == menu
+        ):
+            return True
+    def _responsables_search(self, array, ident):
+        q = self._responsables_to_dict(array)
+        if q["aula"] == ident:
+            return True
+
+    def _comedor_to_dict(self, array):
+        now = datetime.datetime.fromtimestamp(int(array[3]))
+        l = f"{now.year}-{now.month:02d}-{now.day:02d}"
+        return {
+            "codigo_postal": array[0],
+            "comedor": array[1],
+            "menu": array[2],
+            "fecha": l,
+            "plato1": array[4],
+            "plato2": array[5],
+            "plato3": array[6],
+            "plato4": array[7],
+        }
+    def _responsables_to_dict(self, array):
+        return {
+            "aula": array[0],
+            "nombre": array[1],
+            "categoria": array[2],
+            "correo": array[3],
+            "telefono": array[4],
+        }
+
+    def auth(self):
+        json_data = {
+            "username": self.user,
+            "password": self.password,
+        }
+        response = requests.post(self.base + "/api/auth", json=json_data)
+        return response.json()["token"]
+
+    def _comedor_get_json(self):
+        headers = {"Authorization": "Bearer " + self.auth()}
+        response = requests.get(
+            self.base + "/api/et_axelaula_comedor/get_csv/v1?verbose=0",
+            headers=headers,
+        )
+        return response.json()
+    def _responsables_get_json(self):
+        headers = {"Authorization": "Bearer " + self.auth()}
+        response = requests.get(
+            self.base + "/api/et_axelaula/get_responsables/v1?verbose=0",
+            headers=headers,
+        )
+        return response.json()
+
+    def get_responsables(self, ident):
+        j = self._responsables_get_json()
+        e = [self._responsables_to_dict(x) for x in j if self._responsables_search(x, ident)]
+        return e

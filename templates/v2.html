@@ -60,23 +60,6 @@
             {% if data["Comedor"]["Encendido"] %}
             <dd><a href="/menu_comedor">Menu Comedor</a></dd>
             {% endif %}
-            {% if data["Encargos"]["Encendido"] %}
-            <dt class="menu_bar-info">ENCARGOS</dt>
-            <dd><a href="/encargos/nuevo">Nuevo</a></dd>
-            <dd><a href="/encargos/ver">Ver</a></dd>
-            <dd><a href="/encargos/hoy">Ver lo de hoy</a></dd>
-            {% endif %}
-            {% if data["Responsables"]["Encendido"] %}
-            <dt class="menu_bar-info">RESPONSABLES</dt>
-            <dd><a href="/responsables/nuevo">Nuevo</a></dd>
-            <dd><a href="/responsables/ver">Ver</a></dd>
-            {% endif %}
-            {% if data["Almuerzo"]["Encendido"] %}
-            <dt class="menu_bar-info">RESP. TAREAS</dt>
-            <dd><a href="/almuerzo/nuevo">Establecer Nuevo</a></dd>
-            <dd><a href="/almuerzo/ver">Ver</a></dd>
-            <dd><a href="/almuerzo/hoy">Ver lo de Hoy</a></dd>
-            {% endif %}
           </dl>
         </div>
     <!--
