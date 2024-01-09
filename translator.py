@@ -121,7 +121,7 @@ class Client:
 
     def get_correo(self, ident):
         j = self._correo_get_json()
-        e = [self._comedor_to_dict(x) for x in j if self._search(x, ident, "aula", self._correo_to_dict)]
+        e = [self._correo_to_dict(x) for x in j if self._search(x, ident, "aula", self._correo_to_dict)]
         return e
     def fecha(self):
         now = datetime.datetime.now()
