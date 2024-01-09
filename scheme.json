@@ -1,0 +1,29 @@
+{
+  "Clase": { "Nombre": "Aula Estable" },
+  "Escuela": { "Nombre": "Instituto Ballonti" },
+  "Comedor": {
+    "Encendido": true,
+    "Nombre": "Kanpazar",
+    "CodigoPostal": 48920,
+    "Menus": ["Basal", "NoLegumbres-Kiwi"],
+    "Hoy": { "Basal": {}, "NoLegumbres-Kiwi": {} },
+    "Dias": { "Basal": [], "NoLegumbres-Kiwi": [] }
+  },
+  "Embed": false,
+  "Weather": {
+    "Temperatura": 9.1,
+    "Humedad": 56,
+    "Lluvia": 0.0,
+    "Viento": 6.9
+  },
+  "Responsables": [
+    {
+      "aula": "getaldea",
+      "nombre": "Naiel",
+      "categoria": "Alumn@",
+      "correo": "test@example.com",
+      "telefono": {}
+    }
+  ],
+  "Template": "v2.html"
+}

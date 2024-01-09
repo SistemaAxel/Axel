@@ -1,0 +1,18 @@
+{% extends data["Template"] %} {% block contenido %}
+<div id="contenido">
+  <div class="content">
+    <h2>Ver Responsables</h2>
+    {% for resp in data["Responsables"] %}
+      <details>
+        <summary>{{resp['categoria']}}: {{resp['nombre']}}</summary>
+        <b>Email:</b> {{resp['email']}}<br>
+        <b>Telefono:</b> {{resp['telefono']}}<br>
+        </div>
+      </details>
+    {% endfor %}
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% endblock %}

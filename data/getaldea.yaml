@@ -1,0 +1,16 @@
+Escuela:
+  Nombre: "Instituto Ballonti"
+  Ubicacion:
+    Lat: 43.3161355
+    Lon: -3.0259871
+Clase:
+  Nombre: "Aula Estable"
+        
+Comedor:
+  Encendido: true
+  Url: "https://translator.axau.tech.eus/get_data_for_me.json"
+  Nombre: "Kanpazar"
+  CodigoPostal: 48920
+  Menus:
+    - Basal
+    - NoLegumbres-Kiwi

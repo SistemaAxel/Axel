@@ -7,11 +7,11 @@
                 {% if data["Comedor"]["Hoy"][menu] == None %}
                   <b>No disponible.</b>
                 {% else %}
-                <b>Fecha: </b>{{data["Comedor"]["Hoy"][menu]["Fecha"]}}<br>
-                <b>Primer Plato: </b>{{data["Comedor"]["Hoy"][menu]["Plato1"]}}<br>
-                <b>Segundo Plato: </b>{{data["Comedor"]["Hoy"][menu]["Plato2"]}}<br>
-                <b>Postre: </b>{{data["Comedor"]["Hoy"][menu]["Postre"]}}<br>
-                {{data["Comedor"]["Hoy"][menu]["Pan"]}}
+                <b>Fecha: </b>{{data["Comedor"]["Hoy"][menu]["fecha"]}}<br>
+                <b>Primer Plato: </b>{{data["Comedor"]["Hoy"][menu]["plato1"]}}<br>
+                <b>Segundo Plato: </b>{{data["Comedor"]["Hoy"][menu]["plato2"]}}<br>
+                <b>Postre: </b>{{data["Comedor"]["Hoy"][menu]["plato3"]}}<br>
+                {{data["Comedor"]["Hoy"][menu]["plato4"]}}
                 {% endif %}
         {% endfor %}
         
