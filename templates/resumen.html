@@ -51,13 +51,13 @@
   {% if data["Email"] != [] %}
   <h3>¡Teneis una carta nueva!: </h3>
     {% for letter in data["Email"] %}
-    {{letter["contenido"]}}
+    {{letter["contenido"]}}<br>
     {% endfor %}
 {% endif %}
 {% if data["Tareas"] != [] %}
   <h3>Tareas de hoy:</h3>
   {% for tarea in data["Tareas"] %}
-    <b>{{tarea["tarea"]}}</b>: {{tarea["responsable"]}}
+    <b>{{tarea["tarea"]}}</b>: {{tarea["responsable"]}}<br>
   {% endfor %}
 {% endif %}
     <h3><i>¡Espero que tengais un dia genial!</i></h3>
