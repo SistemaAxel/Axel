@@ -17,6 +17,7 @@ WeatherData = {}
 clients = {}
 refreshElTiempo = {}
 
+
 def weather(RCONFIG):
     lat = RCONFIG["Escuela"]["Ubicacion"]["Lat"]
     lon = RCONFIG["Escuela"]["Ubicacion"]["Lon"]
@@ -42,13 +43,20 @@ def get_menu_today(menu):
         return None
     return hoy
 
+
 def load_weather(RCONFIG, fi):
     if refreshElTiempo.get(fi) == True or refreshElTiempo.get(fi) == None:
         refreshElTiempo[fi] = False
         WeatherData[fi] = weather(RCONFIG)
     return WeatherData[fi]
+
+
 def load_comedor(RCONFIG, fi, client):
-    if refreshComedor.get(fi) == True or refreshComedor.get(fi) == None:
+    if (
+        refreshComedor.get(fi) == True
+        or refreshComedor.get(fi) == None
+        or ComedorData.get(fi) == None
+    ):
         refreshComedor[fi] = False
         ComedorData[fi] = {"hoy": {}, "MC": {}}
         if RCONFIG["Comedor"]["Encendido"] == False:
@@ -86,6 +94,8 @@ def alldata(RCONFIG):
         "Embed": check_embed(),
         "Weather": load_weather(RCONFIG, fi),
         "Responsables": client.get_responsables(fi),
+        "Tareas": client.get_tareas(fi),
+        "Email": client.get_correo(fi),
     }
     if RCONFIG["Comedor"]["Encendido"]:
         data["Comedor"] = {
@@ -106,8 +116,24 @@ def alldata(RCONFIG):
 @app.route("/")
 def index():
     RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
-    return render_template("index.html", data=alldata(RCONFIG))
+    return render_template("index.html", data=alldata(RCONFIG), a=request.args["a"])
     # return "Index"
+
+
+@app.route("/responsables")
+def responsables():
+    RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
+    return render_template(
+        "responsables/index.html", data=alldata(RCONFIG), a=request.args["a"]
+    )
+
+
+@app.route("/tareas")
+def tareas():
+    RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
+    return render_template(
+        "tareas/index.html", data=alldata(RCONFIG), a=request.args["a"]
+    )
 
 
 def sayplease(msg):
@@ -116,23 +142,26 @@ def sayplease(msg):
     return send_file("./data/tts.mp3")
 
 
-
 @app.route("/menu_comedor")
 def menu_comedor():
     RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
-    if RCONFIG["Comedor"]["Encendido"]:
-        return render_template("menu_comedor.html", data=alldata(RCONFIG))
-    else:
-        return render_template("menu_comedor.apagado.html", data=alldata(RCONFIG))
+    return render_template(
+        "menu_comedor.html", data=alldata(RCONFIG), a=request.args["a"]
+    )
 
 
 @app.route("/menu_comedor.txt")
 def menu_comedor_txt():
     RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
-    if RCONFIG["Comedor"]["Encendido"]:
-        return render_template("menu_comedor.txt", data=alldata(RCONFIG))
-    else:
-        return "Comedor no disponible"
+    return render_template(
+        "menu_comedor.txt", data=alldata(RCONFIG), a=request.args["a"]
+    )
+
+
+@app.route("/menu_comedor.json")
+def menu_comedor_json():
+    RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
+    return RCONFIG["Comedor"]["Hoy"]
 
 
 @app.route("/api/cron/weather")
@@ -152,19 +181,21 @@ def api__cron_comedor():
 @app.route("/resumen")
 def resumen():
     RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
-    return render_template("resumen.html", data=alldata(RCONFIG))
+    return render_template("resumen.html", data=alldata(RCONFIG), a=request.args["a"])
 
 
 @app.route("/resumen-voz.txt")
 def resumen_voz_txt():
     RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
-    return render_template("resumen.txt", data=alldata(RCONFIG))
+    return render_template("resumen.txt", data=alldata(RCONFIG), a=request.args["a"])
 
 
 @app.route("/resumen-voz.mp3")
 def resumen_voz_mp3():
     RCONFIG = load(open("data/" + request.args["a"] + ".yaml", "r"), SafeLoader)
-    return sayplease(render_template("resumen.txt", data=alldata(RCONFIG)))
+    return sayplease(
+        render_template("resumen.txt", data=alldata(RCONFIG), a=request.args["a"])
+    )
 
 
 if __name__ == "__main__":

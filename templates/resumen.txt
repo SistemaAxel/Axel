@@ -8,39 +8,26 @@ Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de h
         {% if data["Comedor"]["Hoy"][menu] == None %}
           No disponible.
         {% else %}
-          Primer Plato: {{data["Comedor"]["Hoy"][menu]["Plato1"] | replace("*", " (Plato Alternativo)")}}, 
-          Segundo Plato: {{data["Comedor"]["Hoy"][menu]["Plato2"] | replace("*", " (Plato Alternativo)")}}, 
-          Postre: {{data["Comedor"]["Hoy"][menu]["Postre"] | replace("*", " (Plato Alternativo)")}}, 
-          {{data["Comedor"]["Hoy"][menu]["Pan"] | replace("*", " (Plato Alternativo)")}}. 
+          Primer Plato: {{data["Comedor"]["Hoy"][menu]["plato1"] | replace("*", " (Plato Alternativo)")}}, 
+          Segundo Plato: {{data["Comedor"]["Hoy"][menu]["plato2"] | replace("*", " (Plato Alternativo)")}}, 
+          Postre: {{data["Comedor"]["Hoy"][menu]["plato3"] | replace("*", " (Plato Alternativo)")}}, 
+          {{data["Comedor"]["Hoy"][menu]["plato4"] | replace("*", " (Plato Alternativo)")}}. 
         {% endif %}
       {% endfor %}
     {% else %}
       No Disponible.
     {% endif %}
   {% endif %}
-    
-    
-  {% if data["Encargos"]["Encendido"] %}
-    
-    {% for e in data["Encargos"]["Hoy"] %}
-      Encargo de {{e["cliente"]}}:
-      Estado: {{e["hecho"]}},
-      Productos:
-        {{e["prod1"]}}, 
-        {{e["prod2"]}},
-        {{e["prod3"]}},
-        {{e["prod4"]}}.
-      Total: {{e["total"]}} Euros,
-      Pagado: {{e["pagado"]}} Euros.
-    {% endfor %}
+  {% if data["Email"] != [] %}
+    ¡Teneis una carta nueva!: 
+      {% for letter in data["Email"] %}
+      {{letter["contenido"]}}
+      {% endfor %}
   {% endif %}
-
-
-  {% if data["Almuerzo"]["Encendido"] %}
-    
-    {% for e in data["Almuerzo"]["Hoy"] %}
-    Estos son los responsables de tareas para hoy: 
-      {% autoescape false %}{{e['resp'] | replace(";", ",")}}{% endautoescape %}
+  {% if data["Tareas"] != [] %}
+    Tareas de hoy:
+    {% for tarea in data["Tareas"] %}
+      {{tarea["tarea"]}}: {{tarea["responsable"]}}
     {% endfor %}
   {% endif %}
 ¡Espero que tengais un dia genial!

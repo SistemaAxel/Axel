@@ -1,0 +1,24 @@
+{% extends data["Template"] %} {% block contenido %}
+<div id="contenido">
+  <div class="content">
+    <h2>Tareas de hoy</h2>
+    <table id="tabla-listado">
+      <thead>
+        <th scope="col">Responsable</th>
+        <th scope="col">Tarea</th>
+      </thead>
+      <tbody>
+        {% for tarea in data["Tareas"] %}
+          <tr>
+            <td>{{tarea["responsable"]}}</td>
+            <td>{{tarea["tarea"]}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{% endblock %}

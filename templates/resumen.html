@@ -3,7 +3,7 @@
   <div class="content">
     <h2>Hola, soy AxelAula, la Inteligencia Artificial del aula, este es el resumen de hoy:</h2>
     <audio controls>
-      <source src="/resumen-voz.mp3" type="audio/mpeg">
+      <source src="/resumen-voz.mp3?a={{a}}" type="audio/mpeg">
       No se puede mostrar el audio.
     </audio><br>
     <h3>Hoy hacen {{ data["Weather"]["Temperatura"] }}°C de temperatura, {{ data["Weather"]["Humedad"] }}% de humedad y {{ data["Weather"]["Viento"] }} Km/h de viento.</h3>
@@ -16,30 +16,30 @@
     <b>No disponible.</b>
     {% else %}
     <b>Primer Plato: </b>
-    {% if "*" in data["Comedor"]["Hoy"][menu]["Plato1"] %}
+    {% if "*" in data["Comedor"]["Hoy"][menu]["plato1"] %}
     <u>
-    {{data["Comedor"]["Hoy"][menu]["Plato1"]}}</u>
+    {{data["Comedor"]["Hoy"][menu]["plato1"]}}</u>
     {% else %}
-    {{data["Comedor"]["Hoy"][menu]["Plato1"]}}
+    {{data["Comedor"]["Hoy"][menu]["plato1"]}}
     {% endif %}
     <br>
-    <b>Segundo Plato: </b>{% if "*" in data["Comedor"]["Hoy"][menu]["Plato2"] %}
+    <b>Segundo Plato: </b>{% if "*" in data["Comedor"]["Hoy"][menu]["plato2"] %}
     <u>
-      {{data["Comedor"]["Hoy"][menu]["Plato2"]}}</u>
+      {{data["Comedor"]["Hoy"][menu]["plato2"]}}</u>
     {% else %}
-    {{data["Comedor"]["Hoy"][menu]["Plato2"]}}
+    {{data["Comedor"]["Hoy"][menu]["plato2"]}}
     {% endif %}<br>
-    <b>Postre: </b>{% if "*" in data["Comedor"]["Hoy"][menu]["Postre"] %}
+    <b>Postre: </b>{% if "*" in data["Comedor"]["Hoy"][menu]["plato3"] %}
     <u>
-      {{data["Comedor"]["Hoy"][menu]["Postre"]}}</u>
+      {{data["Comedor"]["Hoy"][menu]["plato3"]}}</u>
     {% else %}
-    {{data["Comedor"]["Hoy"][menu]["Postre"]}}
+    {{data["Comedor"]["Hoy"][menu]["plato3"]}}
     {% endif %}<br>
-    {% if "*" in data["Comedor"]["Hoy"][menu]["Pan"] %}
+    {% if "*" in data["Comedor"]["Hoy"][menu]["plato4"] %}
     <u>
-      {{data["Comedor"]["Hoy"][menu]["Pan"]}}</u>
+      {{data["Comedor"]["Hoy"][menu]["plato4"]}}</u>
     {% else %}
-    {{data["Comedor"]["Hoy"][menu]["Pan"]}}
+    {{data["Comedor"]["Hoy"][menu]["plato4"]}}
     {% endif %}
     {% endif %}
     {% endfor %}
@@ -47,31 +47,19 @@
     No Disponible
     {% endif %}
     {% endif %}
-    {% if data["Encargos"]["Encendido"] %}
-    
-        {% for e in data["Encargos"]["Hoy"] %}
-        <h3>Encargo de {{e["cliente"]}} para el {{e["fecha"]}}</h3>
-          <b>Email:</b> {{e["email"]}}<br />
-          <b>Estado:</b> {{e["hecho"]}}<br />
-          <b>Productos:</b>
-          <ul>
-            <li>- {{e["prod1"]}}</li>
-            <li>- {{e["prod2"]}}</li>
-            <li>- {{e["prod3"]}}</li>
-            <li>- {{e["prod4"]}}</li>
-          </ul>
-          <b>Total:</b> {{e["total"]}} €<br />
-          <b>Pagado:</b> {{e["pagado"]}} €<br />
-          <hr />
-        {% endfor %}
-    {% endif %}
-    {% if data["Almuerzo"]["Encendido"] %}
-      
-      {% for e in data["Almuerzo"]["Hoy"] %}
-      <h3>Estos son los responsables de tareas para hoy: </h3>
-        {% autoescape false %}{{e['resp'] | replace(";", "<br>")}}{% endautoescape %}
-      {% endfor %}
-    {% endif %}
+
+  {% if data["Email"] != [] %}
+  <h3>¡Teneis una carta nueva!: </h3>
+    {% for letter in data["Email"] %}
+    {{letter["contenido"]}}
+    {% endfor %}
+{% endif %}
+{% if data["Tareas"] != [] %}
+  <h3>Tareas de hoy:</h3>
+  {% for tarea in data["Tareas"] %}
+    <b>{{tarea["tarea"]}}</b>: {{tarea["responsable"]}}
+  {% endfor %}
+{% endif %}
     <h3><i>¡Espero que tengais un dia genial!</i></h3>
   </div>
 </div>
